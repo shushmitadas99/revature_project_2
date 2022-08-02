@@ -1,0 +1,44 @@
+DROP TABLE IF EXISTS teachers;
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS courses;
+DROP TABLE IF EXISTS assignments;
+
+CREATE TABLE students (
+	s_id SERIAL PRIMARY KEY,
+	username VARCHAR(20) NOT NULL,
+	password VARCHAR(20) NOT NULL,
+	s_name VARCHAR(200) NOT NULL,
+	s_email	VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE teachers (
+	t_id SERIAL PRIMARY KEY,
+	username VARCHAR(20) NOT NULL,
+	password VARCHAR(20) NOT NULL,
+	t_name VARCHAR(200) NOT NULL,
+	t_email	VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE courses (
+	c_id SERIAL PRIMARY KEY,
+	c_name VARCHAR(200) NOT NULL,
+	c_desc VARCHAR(200) NOT NULL,
+	s_id INT NOT NULL,
+	t_id INT NOT NULL,
+	CONSTRAINT fk_s_id FOREIGN KEY (s_id) REFERENCES students(s_id),
+	CONSTRAINT fk_t_id FOREIGN KEY (t_id) REFERENCES teachers(t_id)
+);
+
+CREATE TABLE assignments (
+	assn SERIAL PRIMARY KEY,
+	c_id INT NOT NULL,
+    submitted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    grade CHAR NOT NULL,
+    grade_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_c_id FOREIGN KEY (c_id) REFERENCES courses(c_id)
+);
+
+
+--CREATE TABLE teachers (
+--	
+--)
