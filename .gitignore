@@ -1,0 +1,8 @@
+Project_2/proj2_the_grading_mindset/.idea
+Project_2/proj2_the_grading_mindset/venv
+Project_2/proj2_the_grading_mindset/.env
+Project_2/proj2_the_grading_mindset/controller/__pycache__
+Project_2/proj2_the_grading_mindset/service/__pycache__
+Project_2/proj2_the_grading_mindset/dao/__pycache__
+Project_2/proj2_the_grading_mindset/model/__pycache__
+Project_2/proj2_the_grading_mindset/exception/__pycache__
