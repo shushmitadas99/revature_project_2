@@ -2,6 +2,7 @@ from flask import Flask
 from flask_session import Session
 from controller.student_controller import sc
 from controller.teacher_controller import tc
+from controller.course_controller import cc
 from flask_cors import CORS
 
 if __name__ == '__main__':
@@ -14,5 +15,6 @@ if __name__ == '__main__':
 
     app.register_blueprint(sc)
     app.register_blueprint(tc)
+    app.register_blueprint(cc)
 
     app.run(port=8080, debug=True)

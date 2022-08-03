@@ -1,0 +1,2 @@
+class TeacherNotFoundError(Exception):
+    pass
