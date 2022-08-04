@@ -1,10 +1,21 @@
 from flask import Blueprint, request, session
 from exception.login import LoginError
+from exception.teacher_errors import TeacherNotFoundError
 from service.teacher_service import TeacherService
+from model.teacher import Teacher
 
 tc = Blueprint('teacher_controller', __name__)
 
 teacher_service = TeacherService()
+
+@tc.route('/t/<t_id>', methods=['GET'])
+def get_t_by_id(t_id):
+    try:
+        return teacher_service.get_t_by_id(t_id)
+    except TeacherNotFoundError as e:
+        return{
+            "message": str(e)
+        }, 404
 
 @tc.route('/tlogin', methods=['POST'])
 def t_login():
@@ -28,7 +39,7 @@ def t_login():
 def t_loginstatus():
     if session.get('t_info') is not None:
         return{
-           "message": "You are logged in",
+            "message": "You are logged in",
             "logged_in_teacher": session.get('t_info')
         }, 200
 
