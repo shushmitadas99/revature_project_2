@@ -11,7 +11,11 @@ class StudentDao:
                              password=config['password']) as conn:
 
             with conn.cursor() as cur:
-                cur.execute("SELECT * FROM students WHERE s_id = %s", (s_id,))
+                # Jace's Database Query:
+                cur.execute("SELECT * FROM project2.students WHERE s_id = %s", (s_id,))
+
+                # Shushmita's Database query:
+                # cur.execute("select * from proj2_tgm.students where s_id = %s", (s_id,))
 
                 s_row = cur.fetchone()
                 if not s_row:
@@ -34,7 +38,8 @@ class StudentDao:
                 # That is comment out the other ones
 
                 # Jace's Database query:
-                # cur.execute("select * from project2.students where username = %s and password = %s", (username, password))
+                # cur.execute("select * from project2.students where username = %s and password = %s",
+                # (username, password))
 
                 # Shushmita's Database query:
                 cur.execute("select * from proj2_tgm.students where username = %s and password = %s",
