@@ -11,13 +11,13 @@ class CourseService:
         self.student_dao = StudentDao()
 
     def get_all_cs_by_s_id(self, s_id):
-        if self.course_dao.get_all_cs_by_s_id(s_id) is None:
+        if self.student_dao.get_s_by_id(s_id) is None:
             raise StudentNotFoundError(f"Student with id {s_id} was not found")
         return list(map(lambda y: y.to_dict(), self.course_dao.get_all_cs_by_s_id(s_id)))
 
     def add_c_to_s(self, c_object):
         if self.student_dao.get_s_by_id(c_object.s_id) is None:
-            raise StudentNotFoundError(f"Employee with id {c_object.s_id} was not found")
+            raise StudentNotFoundError(f"Student with id {c_object.s_id} was not found")
         added_new_c = self.course_dao.add_c_to_s(c_object)
         return added_new_c.to_dict()
 
@@ -35,7 +35,7 @@ class CourseService:
 
     def add_c_to_t(self, c_object):
         if self.student_dao.get_s_by_id(c_object.s_id) is None:
-            raise StudentNotFoundError(f"Employee with id {c_object.s_id} was not found")
+            raise TeacherNotFoundError(f"Employee with id {c_object.s_id} was not found")
         added_new_c = self.course_dao.add_c_to_s(c_object)
         return added_new_c.to_dict()
 
