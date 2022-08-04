@@ -8,7 +8,7 @@ config = dotenv_values(".env")  # is a dict
 class TeacherDao:
 
     # for login logout and loginstatus endpoints
-    def get_teacher_by_username_and_password(self, username, password):
+    def get_t_by_username_and_password(self, username, password):
         with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
                        password=config['password']) as conn:
             with conn.cursor() as cur:

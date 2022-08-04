@@ -7,10 +7,10 @@ class TeacherService:
     def __init__(self):
         self.teacher_dao = TeacherDao()
 
-    def teacher_login(self, username, password):
-        teacher_obj = self.teacher_dao.get_teacher_by_username_and_password(username, password)
+    def t_login(self, username, password):
+        t_obj = self.teacher_dao.get_t_by_username_and_password(username, password)
 
-        if teacher_obj is None:
+        if t_obj is None:
             raise LoginError("Invalid username and/or password for teacher")
 
-        return teacher_obj.to_dict()
+        return t_obj.to_dict()
