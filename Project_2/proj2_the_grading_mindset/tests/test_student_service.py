@@ -4,6 +4,7 @@ from service.student_service import StudentService
 from exception.login import LoginError
 from model.student import Student
 
+
 def test_s_login_positive(mocker):
     def mock_s_login(self, username, password):
         if username == "student1" and password == "password1":
@@ -21,6 +22,7 @@ def test_s_login_positive(mocker):
         "s_name": "Student One",
         "username": "student1"
     }
+
 
 def test_s_login_negative(mocker):
     def mock_s_login(self, username, password):
