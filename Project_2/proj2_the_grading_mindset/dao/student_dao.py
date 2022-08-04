@@ -30,7 +30,16 @@ class StudentDao:
         with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
                              password=config['password']) as conn:
             with conn.cursor() as cur:
-                cur.execute("select * from project2.students where username = %s and password = %s", (username, password))
+                # Please use the appropriate database query for testing endpoint:
+                # That is comment out the other ones
+
+                # Jace's Database query:
+                # cur.execute("select * from project2.students where username = %s and password = %s", (username, password))
+
+                # Shushmita's Database query:
+                cur.execute("select * from proj2_tgm.students where username = %s and password = %s",
+                            (username, password))
+
                 s_info = cur.fetchone()
 
                 if s_info is None:
