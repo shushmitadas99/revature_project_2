@@ -43,7 +43,8 @@ INSERT INTO courses (c_name, c_desc, s_id, t_id)
 VALUES
 ('science', 'chemistry', '1', '1'),
 ('science', 'chemistry', '2', '1'),
-('math', 'algebra', '2', '2');
+('math', 'algebra', '2', '2'),
+('english', 'academic', '2', '2'); -- added by Shushmita for test_course_service
 
 CREATE TABLE assignments (
 	assn SERIAL PRIMARY KEY,
