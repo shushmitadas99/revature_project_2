@@ -3,6 +3,7 @@ from dao.student_dao import StudentDao
 from exception.course_errors import CourseNotFoundError
 from exception.student_errors import StudentNotFoundError
 from exception.student_errors import StudentNotFoundError
+from exception.teacher_errors import TeacherNotFoundError
 
 
 class AssignmentService:
@@ -12,13 +13,11 @@ class AssignmentService:
         self.student_dao = StudentDao()
 
     def get_all_assignments_by_s_id(self, s_id):
-
         # if self.assignment_dao.get_all_assignments_by_s_id(s_id) is None:
         #     raise StudentNotFoundError()
-
         list_of_assignment_object = self.assignment_dao.get_all_assignments_by_s_id(s_id)
         if not list_of_assignment_object:
-            raise StudentNotFoundError()
+            raise StudentNotFoundError(f"Student with id {s_id} was not found")
 
         list_of_assignment_dictionaries = []
 
@@ -48,6 +47,23 @@ class AssignmentService:
             raise CourseNotFoundError(f"Student with course_id{c_id} was not found")
 
         return added_new_assignment.to_dict()
+
+    def get_all_assignments_by_t_id(self, t_id):
+
+        # if self.assignment_dao.get_all_assignments_by_s_id(s_id) is None:
+        #     raise StudentNotFoundError()
+
+        list_of_assignment_object = self.assignment_dao.get_all_assignments_by_t_id(t_id)
+        if not list_of_assignment_object:
+            raise TeacherNotFoundError(f"Teacher with id {t_id} was not found")
+
+        list_of_assignment_dictionaries = []
+
+        for assignment_obj in list_of_assignment_object:
+            list_of_assignment_dictionaries.append(assignment_obj.to_dict())
+
+        return list_of_assignment_dictionaries
+
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, a_id, a_object):
         updated_assignment_object = self.assignment_dao.update_assignments_by_c_id_and_a_id(t_id, c_id, a_id, a_object)
         # if updated_assignment_object is None:

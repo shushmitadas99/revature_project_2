@@ -2,6 +2,7 @@ from flask import Blueprint, request, session
 
 from exception.course_errors import CourseNotFoundError
 from exception.student_errors import StudentNotFoundError
+from exception.teacher_errors import TeacherNotFoundError
 from model.assignment_model import Assignments
 from service.assignment_service import AssignmentService
 
@@ -21,6 +22,7 @@ def get_all_assignments_by_s_id(s_id):
             "message": f"Student with  id student_id{s_id} was not found"
         }, 404
 
+
 @ac.route('/student/<s_id>/course/<c_id>/assignments', methods=['GET'])
 def get_all_assignments_by_c_id(s_id, c_id):
     try:
@@ -35,6 +37,7 @@ def get_all_assignments_by_c_id(s_id, c_id):
         return {
                    "message": str(e)
                }, 404
+
 
 @ac.route('/student/<s_id>/course/<c_id>/assignments', methods=['POST'])
 def add_assignments_to_c_id(s_id, c_id):
@@ -51,6 +54,17 @@ def add_assignments_to_c_id(s_id, c_id):
                    "message": str(e)
                }, 404
 
+
+@ac.route('/tlogin/<t_id>/a', methods=['GET'])
+def get_all_assignments_by_t_id(t_id):
+    try:
+        return {
+            "assignments": assignment_service.get_all_assignments_by_t_id(t_id)
+    }
+    except TeacherNotFoundError as e:
+        return{
+            "message": str(e)
+        }, 404
 
 @ac.route('/teacher/<t_id>/course/<c_id>/assignments/<a_id>', methods=['PUT'])
 def update_assignments_by_c_id_and_a_id(t_id, c_id, a_id):

@@ -65,6 +65,23 @@ class AssignmentDao:
                 return Assignments(assignment_row_inserted[0], assignment_row_inserted[1], assignment_row_inserted[2],
                                      assignment_row_inserted[3], assignment_row_inserted[4])
 
+    def get_all_assignments_by_t_id(self, t_id):
+        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
+                             password=config['password']) as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "select a.assn,a.submitted,a.grade,a.grade_time,c.c_name from assignments a join courses c on "
+                    "a.c_id = c.c_id and c.s_id in (select t_id from courses  where courses.t_id = %s)",
+                    (t_id,))
+
+                assignment_list = []
+
+                for row in cur:
+                    my_assignment_obj = Sassignments(row[0], row[1], row[2], row[3], row[4])
+                    assignment_list.append(my_assignment_obj)
+
+                return assignment_list
+
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, a_id,  a_object):
         with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
                              password=config['password']) as conn:
