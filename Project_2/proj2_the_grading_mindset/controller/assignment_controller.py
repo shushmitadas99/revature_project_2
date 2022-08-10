@@ -11,7 +11,7 @@ ac = Blueprint('assignment_controller', __name__)
 assignment_service = AssignmentService()
 
 
-@ac.route('/student/<s_id>/assignments', methods=['GET'])
+@ac.route('/slogin/<s_id>/a', methods=['GET'])
 def get_all_assignments_by_s_id(s_id):
     try:
         return {
@@ -19,11 +19,10 @@ def get_all_assignments_by_s_id(s_id):
     }
     except StudentNotFoundError as e:
         return{
-            "message": f"Student with  id student_id{s_id} was not found"
+            "message": str(e)
         }, 404
 
-
-@ac.route('/student/<s_id>/course/<c_id>/assignments', methods=['GET'])
+@ac.route('/slogin/<s_id>/c/<c_id>/a', methods=['GET'])
 def get_all_assignments_by_c_id(s_id, c_id):
     try:
         return {
@@ -38,13 +37,12 @@ def get_all_assignments_by_c_id(s_id, c_id):
                    "message": str(e)
                }, 404
 
-
-@ac.route('/student/<s_id>/course/<c_id>/assignments', methods=['POST'])
+@ac.route('/slogin/<s_id>/c/<c_id>/a', methods=['POST'])
 def add_assignments_to_c_id(s_id, c_id):
     c_json_dictionary = request.get_json()
-    c_object = Assignments(None, c_id, None, c_json_dictionary['grade'], None)
+    a_object = Assignments(None, c_id, None, c_json_dictionary["grade"], None)
     try:
-        return assignment_service.add_assignments_to_c_id(s_id, c_id, c_object), 201
+        return assignment_service.add_assignments_to_c_id(s_id, c_id, a_object), 201
     except StudentNotFoundError as e:
         return{
             "message": str(e)
@@ -53,8 +51,6 @@ def add_assignments_to_c_id(s_id, c_id):
         return {
                    "message": str(e)
                }, 404
-
-
 @ac.route('/tlogin/<t_id>/a', methods=['GET'])
 def get_all_assignments_by_t_id(t_id):
     try:
@@ -66,7 +62,23 @@ def get_all_assignments_by_t_id(t_id):
             "message": str(e)
         }, 404
 
-@ac.route('/teacher/<t_id>/course/<c_id>/assignments/<a_id>', methods=['PUT'])
+
+
+@ac.route('/tlogin/<t_id>/c/<c_id>/a', methods=['GET'])
+def get_all_assignments_by_t_id_and_c_id(t_id, c_id):
+    try:
+        return {
+            "assignments": assignment_service.get_all_assignments_by_t_id_and_c_id(t_id, c_id)
+        }
+
+    except CourseNotFoundError as e:
+        return {
+                   "message": str(e)
+               }, 404
+
+
+
+@ac.route('/tlogin/<t_id>/c/<c_id>/a/<a_id>', methods=['PUT'])
 def update_assignments_by_c_id_and_a_id(t_id, c_id, a_id):
     try:
         a_json_dictionary = request.get_json()

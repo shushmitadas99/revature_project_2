@@ -6,7 +6,8 @@ from dotenv import dotenv_values
 config = dotenv_values(".env")
 import datetime
 
-from model.assignment_model import Assignments, Sassignments
+from model.assignment_model import Assignments, Sassignments, Tassignments
+
 
 class AssignmentDao:
 
@@ -81,6 +82,28 @@ class AssignmentDao:
                     assignment_list.append(my_assignment_obj)
 
                 return assignment_list
+
+
+
+    def get_all_assignments_by_t_id_and_c_id(self, t_id, c_id):
+        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'],
+                                             user=config['user'], password=config['password']) as conn:
+                    with conn.cursor() as cur:
+                        cur.execute("select a.assn, s.s_name, c.c_name,c.c_desc, a.submitted, a.grade, a.grade_time from "
+                                    " assignments a inner join courses c on a.c_id = c.c_id "
+                                    "inner join teachers t on t.t_id =c.t_id "
+                                    "inner join students s on s.s_id = c.s_id "
+                                    "where c.t_id = %s and c.c_id = %s order by s.s_name", (t_id, c_id))
+
+                        assignment_list = []
+
+                        for row in cur:
+
+                            my_assignment_obj = Tassignments(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+                            assignment_list.append(my_assignment_obj)
+
+                        return assignment_list
+
 
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, a_id,  a_object):
         with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
