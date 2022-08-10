@@ -64,6 +64,20 @@ class AssignmentService:
 
         return list_of_assignment_dictionaries
 
+
+    def get_all_assignments_by_t_id_and_c_id(self, t_id, c_id):
+        list_of_assignment_object = self.assignment_dao.get_all_assignments_by_t_id_and_c_id(t_id, c_id)
+        if not list_of_assignment_object:
+                raise CourseNotFoundError(f"Course with course_id {c_id} was not found")
+
+        list_of_assignment_dictionaries = []
+
+        for assignment_obj in list_of_assignment_object:
+            list_of_assignment_dictionaries.append(assignment_obj.to_dict())
+
+        return list_of_assignment_dictionaries
+
+
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, a_id, a_object):
         updated_assignment_object = self.assignment_dao.update_assignments_by_c_id_and_a_id(t_id, c_id, a_id, a_object)
         # if updated_assignment_object is None:

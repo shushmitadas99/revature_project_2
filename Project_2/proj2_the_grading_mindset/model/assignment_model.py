@@ -34,3 +34,27 @@ class Sassignments:
 
             }
 
+class Tassignments:
+    def __init__(self, assn, s_name, c_name, c_desc, submitted, grade, grade_time):
+        self.assn = assn
+        self.s_name = s_name
+        self.c_name = c_name
+        self.c_desc = c_desc
+        self.submitted = submitted
+        self.grade = grade
+        self.grade_time = grade_time
+
+
+    def to_dict(self):
+        return {
+            "assn": self.assn,
+            "s_name": self.s_name,
+            "c_name": self.c_name,
+            "c_desc": self.c_desc,
+            "submitted": self.submitted,
+            "grade": self.grade,
+            "grade_time": self.grade_time,
+
+
+            }
+
