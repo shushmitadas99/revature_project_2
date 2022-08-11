@@ -13,3 +13,23 @@
     font-size:x-large;
     background-color: rgb(45, 196, 222);
 }
+
+.sHomeBtn, .tHomeBtn {
+    margin: 30px;
+    width: 500px;
+    height: 250px;
+    font-size:x-large;
+    background-color: rgb(83, 128, 233);
+}
+
+.tHomeBtn {
+    background-color: rgb(45, 196, 222);
+}
+
+.sHomeContainer1, .sHomeContainer2, .tHomeContainer1, .tHomeContainer2 {
+    display: flex;
+    gap: 10px;
+    gap: 10px 20px; /* row-gap column gap */
+    row-gap: 10px;
+    column-gap: 20px;
+}
