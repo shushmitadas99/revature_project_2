@@ -1,0 +1,15 @@
+#sBtn {
+    margin: 30px;
+    width: 500px;
+    height: 250px;
+    font-size:x-large;
+    background-color: rgb(83, 128, 233);
+}
+
+#tBtn {
+    margin: 30px;
+    width: 500px;
+    height: 250px;
+    font-size:x-large;
+    background-color: rgb(45, 196, 222);
+}
