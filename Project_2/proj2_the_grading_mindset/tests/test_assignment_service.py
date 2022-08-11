@@ -232,3 +232,89 @@ def test_get_all_assignments_by_t_id_negative(mocker):
     with pytest.raises(TeacherNotFoundError) as excinfo:
         assignment_service.get_all_assignments_by_t_id(t_id=1000)
     assert str(excinfo.value) == f"Teacher with id 1000 was not found"
+
+def test_add_assignments_to_c_id_positive(mocker):  # Test pass (if block commented)
+    def mock_add_assignments_to_c_id(submitted, grade, grade_time, c_name):
+        if submitted is None and grade is None and grade_time is None and c_name == "science":
+            return None
+    mocker.patch("dao.assignment_dao.AssignmentDao.add_assignments_to_c_id", mock_add_assignments_to_c_id)
+    a_object_to_add = assignment_model.Sassignments(1, None, None, None, "science")
+
+    def mock_add_assignments_to_c_id(self, s_id, c_id, a_object):
+        if a_object == a_object_to_add and c_id == 1:
+            return assignment_model.Sassignments(1, None, None, None, "science")
+        else:
+            return None
+
+    mocker.patch("dao.assignment_dao.AssignmentDao.add_assignments_to_c_id", mock_add_assignments_to_c_id)
+    assignment_service = AssignmentService()
+    actual = assignment_service.add_assignments_to_c_id(a_object=a_object_to_add, s_id=1, c_id=1)
+    assert actual == {
+        "assn": 1,
+        "submitted": None,
+        "grade": None,
+        "grade_time": None,
+        "c_name": "science"
+    }
+
+def test_add_assignments_to_c_id_negative_s_id(mocker):  # Test fail
+    def mock_get_s_by_id(self, s_id):
+        if s_id == "1":
+            return Sassignments(1, None, None, None, "science")
+        else:
+            return None
+    mocker.patch("dao.student_dao.StudentDao.get_s_by_id", mock_get_s_by_id)
+    student_service = StudentService()
+    with pytest.raises(StudentNotFoundError) as excinfo:
+        student_service.get_s_by_id("1000")
+    assert str(excinfo.value) == "Student with the id 1000 was not found"
+
+def test_add_assignments_to_c_id_negative_c_id(mocker): # Test fail
+    a_object_to_add = assignment_model.Assignments(1, 1, None, None, None)
+
+    def mock_add_assignments_to_c_id(self, s_id, c_id, a_object):
+        if a_object.c_id == "1":
+            return assignment_model.Assignments(1, 1, None, None, None)
+        else:
+            return None
+    mocker.patch("dao.assignment_dao.AssignmentDao.add_assignments_to_c_id", mock_add_assignments_to_c_id)
+    assignment_service = AssignmentService()
+    with pytest.raises(CourseNotFoundError) as excinfo:
+        assignment_service.add_assignments_to_c_id(a_object=a_object_to_add, s_id=1, c_id=1000)
+    assert str(excinfo.value) == "Course with the id 1000 was not found"
+
+def test_update_assignments_by_c_id_and_a_id_positive(mocker):
+    updated_a_object = Assignments(1, 1,  None, 'A', None)
+
+    def mock_update_assignments_by_c_id_and_a_id(self, t_id, c_id, assn, a_object):
+        if a_object.c_id == 1 and a_object.assn == 1:
+            return Assignments(1, 1,  None, 'A', None)
+        else:
+            return None
+    mocker.patch("dao.assignment_dao.AssignmentDao.update_assignments_by_c_id_and_a_id",
+                 mock_update_assignments_by_c_id_and_a_id)
+    assignment_service = AssignmentService()
+    actual = assignment_service.update_assignments_by_c_id_and_a_id(a_object=updated_a_object, t_id=1,
+                                                                    c_id=1, assn=1)
+    assert actual == {
+        "assn": 1,
+        "c_id": 1,
+        "submitted": None,
+        "grade": "A",
+        "self.grade_time": None
+        }
+
+def test_update_assignments_by_c_id_and_a_id_negative(mocker):
+    updated_a_object = Assignments(8, 1, None, 'A', None)
+
+    def mock_update_assignments_by_c_id_and_a_id(self, t_id, c_id, assn, a_object):
+        if a_object.c_id == 1 and a_object.assn == 1:
+            return Assignments(1, 1,  None, 'A', None)
+        else:
+            return None
+    mocker.patch("dao.assignment_dao.AssignmentDao.update_assignments_by_c_id_and_a_id",
+                 mock_update_assignments_by_c_id_and_a_id)
+    assignment_service = AssignmentService()
+    with pytest.raises(CourseNotFoundError) as excinfo:
+        assignment_service.update_assignments_by_c_id_and_a_id(a_object=updated_a_object, t_id=1, c_id=100, assn=100)
+    assert str(excinfo.value) == f"Course with c_id 100 and assignment with a_id 100 was not found"

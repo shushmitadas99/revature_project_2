@@ -79,13 +79,13 @@ def get_all_assignments_by_t_id_and_c_id(t_id, c_id):
 
 
 @ac.route('/tlogin/<t_id>/c/<c_id>/a/<a_id>', methods=['PUT'])
-def update_assignments_by_c_id_and_a_id(t_id, c_id, a_id):
+def update_assignments_by_c_id_and_a_id(t_id, c_id, assn):
     try:
         a_json_dictionary = request.get_json()
         # print(a_json_dictionary['grade'])
         a_object = Assignments(None, None, None, a_json_dictionary['grade'], None)
         print(a_object.grade)
-        return assignment_service.update_assignments_by_c_id_and_a_id(t_id, c_id, a_id, a_object)
+        return assignment_service.update_assignments_by_c_id_and_a_id(t_id, c_id, assn, a_object)
 
     except CourseNotFoundError as e:
         return {
