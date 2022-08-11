@@ -47,7 +47,7 @@ class AssignmentDao:
 
                 return assignment_list
 
-    def add_assignments_to_c_id(self, s_id, c_id, c_object):
+    def add_assignments_to_c_id(self, s_id, c_id, a_object):
         with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
                              password=config['password']) as conn:
 
@@ -58,7 +58,7 @@ class AssignmentDao:
                     return None
                 else:
 
-                    cur.execute("INSERT INTO assignments (c_id, grade) VALUES (%s, %s) RETURNING *", (c_id, c_object.grade))
+                    cur.execute("INSERT INTO assignments (c_id, grade) VALUES (%s, %s) RETURNING *", (c_id, a_object.grade))
 
                 assignment_row_inserted = cur.fetchone()
                 conn.commit()
@@ -105,7 +105,7 @@ class AssignmentDao:
                         return assignment_list
 
 
-    def update_assignments_by_c_id_and_a_id(self, t_id, c_id, a_id,  a_object):
+    def update_assignments_by_c_id_and_a_id(self, t_id, c_id, assn, a_object):
         with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
                              password=config['password']) as conn:
             current_time = datetime.datetime.now()
