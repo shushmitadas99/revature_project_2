@@ -16,8 +16,8 @@ class CourseDao:
                 # That is comment out the other ones
 
                 # Jace's Database query:
-                cur.execute("SELECT t_name, t_email, c_name, c_desc FROM project2.teachers t "
-                            "JOIN project2.courses c ON t.t_id = c.t_id WHERE s_id = %s", (s_id,))
+                cur.execute("SELECT t_name, t_email, c_name, c_desc FROM teachers t "
+                            "JOIN courses c ON t.t_id = c.t_id WHERE s_id = %s", (s_id,))
 
                 # # Shushmita's Database query:
                 # cur.execute("SELECT t_name, t_email, c_name, c_desc FROM proj2_tgm.teachers t "
@@ -39,9 +39,9 @@ class CourseDao:
                 # That is comment out the other ones
 
                 # Jace's Database query:
-                cur.execute("INSERT INTO project2.courses (c_id, c_name, c_desc, s_id, t_id) "
-                            "VALUES (%s, %s, %s, %s, %s) RETURNING *",
-                            (c_object.c_id, c_object.c_name, c_object.c_desc,
+                cur.execute("INSERT INTO courses (c_name, c_desc, s_id, t_id) "
+                            "VALUES (%s, %s, %s, %s) RETURNING *",
+                            (c_object.c_name, c_object.c_desc,
                              c_object.s_id, c_object.t_id))
 
                 # # Shushmita's Database query:
@@ -65,9 +65,9 @@ class CourseDao:
                 # That is comment out the other ones
 
                 # Jace's Database query:
-                cur.execute("UPDATE project2.courses SET c_name = %s, c_desc = %s, t_id = %s "
+                cur.execute("UPDATE courses SET c_name = %s, c_desc = %s, t_id = %s "
                             "WHERE c_id= %s AND s_id = %s RETURNING *",
-                            (c_object.c_name, c_object.c_desc, c_object.t_id))
+                            (c_object.c_name, c_object.c_desc, c_object.t_id, c_object.c_id, c_object.s_id))
 
                 # Shushmita's Database query:
                 # cur.execute("UPDATE proj2_tgm.courses SET c_name = %s, c_desc = %s, t_id = %s "
@@ -92,7 +92,7 @@ class CourseDao:
                 # That is comment out the other ones
 
                 # Jace's Database query:
-                cur.execute("SELECT s_name, s_email, c_name, c_desc FROM project2.students s "
+                cur.execute("SELECT s_name, s_email, c_name, c_desc FROM students s "
                             "JOIN project2.courses c ON s.s_id = c.s_id WHERE t_id = %s", (t_id,))
 
                 # Shushmita's Database query:
@@ -121,7 +121,7 @@ class CourseDao:
                 #              c_object.s_id, c_object.t_id))
 
                 # Shushmita's Database query:
-                cur.execute("INSERT INTO proj2_tgm.courses (c_id, c_name, c_desc, s_id, t_id) "
+                cur.execute("INSERT INTO courses (c_id, c_name, c_desc, s_id, t_id) "
                             "VALUES (%s, %s, %s, %s, %s) RETURNING *",
                             (c_object.c_id, c_object.c_name, c_object.c_desc,
                              c_object.s_id, c_object.t_id))
@@ -146,7 +146,7 @@ class CourseDao:
                 #             (c_object.c_name, c_object.c_desc, c_object.t_id))
 
                 # Shushmita's Database query:
-                cur.execute("UPDATE proj2_tgm.courses SET c_name = %s, c_desc = %s, t_id = %s "
+                cur.execute("UPDATE courses SET c_name = %s, c_desc = %s, t_id = %s "
                             "WHERE c_id= %s AND s_id = %s RETURNING *",
                             (c_object.c_name, c_object.c_desc, c_object.t_id))
 

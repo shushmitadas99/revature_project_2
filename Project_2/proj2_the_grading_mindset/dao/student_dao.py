@@ -12,7 +12,7 @@ class StudentDao:
 
             with conn.cursor() as cur:
                 # Jace's Database Query:
-                cur.execute("SELECT * FROM project2.students WHERE s_id = %s", (s_id,))
+                cur.execute("SELECT * FROM students WHERE s_id = %s", (s_id,))
 
                 # Shushmita's Database query:
                 # cur.execute("select * from proj2_tgm.students where s_id = %s", (s_id,))
@@ -42,7 +42,7 @@ class StudentDao:
                 # (username, password))
 
                 # Shushmita's Database query:
-                cur.execute("select * from proj2_tgm.students where username = %s and password = %s",
+                cur.execute("select * from students where username = %s and password = %s",
                             (username, password))
 
                 s_info = cur.fetchone()
