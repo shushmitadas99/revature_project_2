@@ -1,11 +1,11 @@
 import os
 import psycopg
-import datetime
 from datetime import datetime
 from dotenv import dotenv_values
 from model.assignment_model import Assignments, Sassignments, Tassignments
 
 config = dotenv_values(".env")
+import datetime  # do not change the location of this import - otherwise program breaks
 
 
 class AssignmentDao:
