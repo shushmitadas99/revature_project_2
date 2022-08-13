@@ -1,24 +1,20 @@
-from datetime import datetime, timezone
-
+import os
 import psycopg
+import datetime
+from datetime import datetime
 from dotenv import dotenv_values
+from model.assignment_model import Assignments, Sassignments, Tassignments
 
 config = dotenv_values(".env")
-import datetime
-
-from model.assignment_model import Assignments, Sassignments, Tassignments
 
 
 class AssignmentDao:
 
-         # dt = datetime.now(timezone.utc)
     current_time = datetime.datetime.now()
-  # print(dt1)
     print(current_time)
 
     def get_all_assignments_by_s_id(self, s_id):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'],
-                             user=config['user'], password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
             with conn.cursor() as cur:
 
                 cur.execute("select a.assn,a.submitted,a.grade,a.grade_time,c.c_name from assignments a join courses c on a.c_id = c.c_id and c.s_id in (select s_id from courses  where courses.s_id = %s)", (s_id, ))
@@ -33,8 +29,7 @@ class AssignmentDao:
                 return assignment_list
 
     def get_all_assignments_by_c_id(self, s_id, c_id):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'],
-                                     user=config['user'], password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
             with conn.cursor() as cur:
                 cur.execute("select a.assn, a.submitted, a.grade, a.grade_time, c.c_name, c.c_desc, c.s_id from assignments a join courses c on a.c_id = c.c_id and c.c_id in(select c_id from courses  where courses.c_id = %s and courses.s_id = %s)", (c_id, s_id))
 
@@ -48,8 +43,7 @@ class AssignmentDao:
                 return assignment_list
 
     def add_assignments_to_c_id(self, s_id, c_id, a_object):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
-                             password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
 
             with conn.cursor() as cur:
                 cur.execute("select * from courses where s_id = %s and c_id = %s", (s_id, c_id))
@@ -67,8 +61,7 @@ class AssignmentDao:
                                      assignment_row_inserted[3], assignment_row_inserted[4])
 
     def get_all_assignments_by_t_id(self, t_id):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
-                             password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
             with conn.cursor() as cur:
                 cur.execute(
                     "select a.assn,a.submitted,a.grade,a.grade_time,c.c_name from assignments a join courses c on "
@@ -86,8 +79,7 @@ class AssignmentDao:
 
 
     def get_all_assignments_by_t_id_and_c_id(self, t_id, c_id):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'],
-                                             user=config['user'], password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
                     with conn.cursor() as cur:
                         cur.execute("select a.assn, s.s_name, c.c_name,c.c_desc, a.submitted, a.grade, a.grade_time from "
                                     " assignments a inner join courses c on a.c_id = c.c_id "
@@ -106,13 +98,12 @@ class AssignmentDao:
 
 
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, assn, a_object):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
-                             password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
             current_time = datetime.datetime.now()
             print(a_object.grade)
             # print(current_time)
             with conn.cursor() as cur:
-                cur.execute("update assignments set grade = %s, grade_time = %s where assn = %s and c_id = %s returning *", (a_object.grade, current_time, a_id, c_id))
+                cur.execute("update assignments set grade = %s, grade_time = %s where assn = %s and c_id = %s returning *", (a_object.grade, current_time, assn, c_id))
 
                 conn.commit()
 
