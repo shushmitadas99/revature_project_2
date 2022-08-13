@@ -1,7 +1,6 @@
 from flask import Blueprint, request, session
 from exception.login import LoginError
 from service.student_service import StudentService
-from model.student import Student
 from exception.student_errors import StudentNotFoundError
 
 sc = Blueprint('student_controller', __name__)

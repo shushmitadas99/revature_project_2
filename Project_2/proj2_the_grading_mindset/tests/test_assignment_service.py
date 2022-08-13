@@ -1,26 +1,16 @@
 import pytest
-import pytest_mock
-from dotenv import dotenv_values
-import model.course as course
-from datetime import datetime, timezone
-
 from exception.course_errors import CourseNotFoundError
 from exception.student_errors import StudentNotFoundError
 from exception.teacher_errors import TeacherNotFoundError
 from model import assignment_model
 from model.assignment_model import Sassignments, Assignments
-from model.student import Student
-from model.teacher import Teacher
 from service.assignment_service import AssignmentService
 from service.student_service import StudentService
 
-# current_time = datetime.datetime.now()
-# print(current_time)
 
 def test_get_all_assignments_by_s_id_positive_multiple(mocker):
     def mock_get_all_assignments_by_s_id(self, s_id):
         return [
-            # Sassignments(row[0], row[1], row[2], row[3], row[4])
             Sassignments(1, '2022-08-10 07:03:16.478', 'A', '2022-08-10 07:03:16.478', 'science'),
             Sassignments(2, '2022-08-10 07:03:16.478', 'B', '2022-08-10 07:03:16.478', 'math')
         ]
@@ -137,38 +127,9 @@ def test_get_all_assignments_by_c_id_negative(mocker):
     assert str(excinfo.value) == f"Course with course_id 1000 was not found"
 
 
-# FIXME: TypeError: add_assignments_to_c_id() missing 1 required positional argument: 'a_object'
-# def test_add_assignments_to_c_id_positive(mocker):
-#     def mock_add_assignments_to_c_id(c_id, submitted, grade, grade_time):
-#         if c_id == 1 and submitted == 2022 and grade is None and grade_time is None:
-#             return None
-#         # assn, c_id, submitted, grade, grade_time
-#     mocker.patch("dao.assignment_dao.AssignmentDao.add_assignments_to_c_id", mock_add_assignments_to_c_id)
-#     a_object_to_add = assignment_model.Assignments(None, 1, 2022, None, None)
-#
-#     def mock_add_assignments_to_c_id(self, c_id, a_object):
-#         if a_object == a_object_to_add and c_id == 1:
-#             return assignment_model.Assignments(1, 1, 2022, None, None)
-#         else:
-#             return None
-#
-#     mocker.patch("dao.assignment_dao.AssignmentDao.add_assignments_to_c_id", mock_add_assignments_to_c_id)
-#     assignment_service = AssignmentService()
-#     actual = assignment_service.add_assignments_to_c_id(a_object_to_add, c_id=1)
-#
-#     assert actual == {
-#         "assn": 1,
-#         "c_id": 1,
-#         "submitted": 2022,
-#         "grade": None,
-#         "grade_time": None
-#     }
-
-
 def test_get_all_assignments_by_t_id_positive_multiple(mocker):
     def mock_get_all_assignments_by_t_id(self, t_id):
         return [
-            # Sassignments(row[0], row[1], row[2], row[3], row[4])
             Sassignments(2, '2022-08-10 07:03:16.478', 'A', '2022-08-10 07:03:16.478', 'science'),
             Sassignments(3, '2022-08-10 07:03:16.478', 'B', '2022-08-10 07:03:16.478', 'science'),
             Sassignments(4, '2022-08-10 07:03:16.478', 'B', '2022-08-10 07:03:16.478', 'science'),
@@ -233,6 +194,7 @@ def test_get_all_assignments_by_t_id_negative(mocker):
         assignment_service.get_all_assignments_by_t_id(t_id=1000)
     assert str(excinfo.value) == f"Teacher with id 1000 was not found"
 
+
 def test_add_assignments_to_c_id_positive(mocker):  # Test pass (if block commented)
     def mock_add_assignments_to_c_id(submitted, grade, grade_time, c_name):
         if submitted is None and grade is None and grade_time is None and c_name == "science":
@@ -257,6 +219,7 @@ def test_add_assignments_to_c_id_positive(mocker):  # Test pass (if block commen
         "c_name": "science"
     }
 
+
 def test_add_assignments_to_c_id_negative_s_id(mocker):  # Test fail
     def mock_get_s_by_id(self, s_id):
         if s_id == "1":
@@ -268,6 +231,7 @@ def test_add_assignments_to_c_id_negative_s_id(mocker):  # Test fail
     with pytest.raises(StudentNotFoundError) as excinfo:
         student_service.get_s_by_id("1000")
     assert str(excinfo.value) == "Student with the id 1000 was not found"
+
 
 def test_add_assignments_to_c_id_negative_c_id(mocker): # Test fail
     a_object_to_add = assignment_model.Assignments(1, 1, None, None, None)
@@ -281,7 +245,8 @@ def test_add_assignments_to_c_id_negative_c_id(mocker): # Test fail
     assignment_service = AssignmentService()
     with pytest.raises(CourseNotFoundError) as excinfo:
         assignment_service.add_assignments_to_c_id(a_object=a_object_to_add, s_id=1, c_id=1000)
-    assert str(excinfo.value) == "Course with the id 1000 was not found"
+    assert str(excinfo.value) == "Course with id 1000 was not found"
+
 
 def test_update_assignments_by_c_id_and_a_id_positive(mocker):
     updated_a_object = Assignments(1, 1,  None, 'A', None)
@@ -303,6 +268,7 @@ def test_update_assignments_by_c_id_and_a_id_positive(mocker):
         "grade": "A",
         "self.grade_time": None
         }
+
 
 def test_update_assignments_by_c_id_and_a_id_negative(mocker):
     updated_a_object = Assignments(8, 1, None, 'A', None)

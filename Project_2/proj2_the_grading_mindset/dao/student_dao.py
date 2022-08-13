@@ -1,21 +1,18 @@
-from dotenv import dotenv_values
-
-from model.student import Student
+import os
 import psycopg
+from dotenv import dotenv_values
+from model.student import Student
 
 config = dotenv_values(".env")  # is a dict
 
+
 class StudentDao:
     def get_s_by_id(self, s_id):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
-                             password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
 
             with conn.cursor() as cur:
-                # Jace's Database Query:
-                cur.execute("SELECT * FROM students WHERE s_id = %s", (s_id,))
 
-                # Shushmita's Database query:
-                # cur.execute("select * from proj2_tgm.students where s_id = %s", (s_id,))
+                cur.execute("SELECT * FROM students WHERE s_id = %s", (s_id,))
 
                 s_row = cur.fetchone()
                 if not s_row:
@@ -31,17 +28,9 @@ class StudentDao:
 
     # for login logout and loginstatus endpoints
     def get_s_by_username_and_password(self, username, password):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
-                             password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
             with conn.cursor() as cur:
-                # Please use the appropriate database query for testing endpoint:
-                # That is comment out the other ones
 
-                # Jace's Database query:
-                # cur.execute("select * from project2.students where username = %s and password = %s",
-                # (username, password))
-
-                # Shushmita's Database query:
                 cur.execute("select * from students where username = %s and password = %s",
                             (username, password))
 

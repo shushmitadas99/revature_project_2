@@ -31,7 +31,6 @@ class Sassignments:
             "grade": self.grade,
             "grade_time": self.grade_time,
             "c_name": self.c_name
-
             }
 
 class Tassignments:
@@ -54,7 +53,5 @@ class Tassignments:
             "submitted": self.submitted,
             "grade": self.grade,
             "grade_time": self.grade_time,
-
-
             }
 

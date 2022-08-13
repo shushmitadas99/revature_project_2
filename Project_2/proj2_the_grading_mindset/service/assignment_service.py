@@ -13,9 +13,8 @@ class AssignmentService:
         self.student_dao = StudentDao()
 
     def get_all_assignments_by_s_id(self, s_id):
-        # if self.assignment_dao.get_all_assignments_by_s_id(s_id) is None:
-        #     raise StudentNotFoundError()
         list_of_assignment_object = self.assignment_dao.get_all_assignments_by_s_id(s_id)
+
         if not list_of_assignment_object:
             raise StudentNotFoundError(f"Student with id {s_id} was not found")
 
@@ -44,14 +43,11 @@ class AssignmentService:
 
         added_new_assignment = self.assignment_dao.add_assignments_to_c_id(s_id, c_id, a_object)
         if not added_new_assignment:
-            raise CourseNotFoundError(f"Student with course_id{c_id} was not found")
+            raise CourseNotFoundError(f"Course with id {c_id} was not found")
 
         return added_new_assignment.to_dict()
 
     def get_all_assignments_by_t_id(self, t_id):
-
-        # if self.assignment_dao.get_all_assignments_by_s_id(s_id) is None:
-        #     raise StudentNotFoundError()
 
         list_of_assignment_object = self.assignment_dao.get_all_assignments_by_t_id(t_id)
         if not list_of_assignment_object:
@@ -80,8 +76,7 @@ class AssignmentService:
 
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, assn, a_object):
         updated_assignment_object = self.assignment_dao.update_assignments_by_c_id_and_a_id(t_id, c_id, assn, a_object)
-        # if updated_assignment_object is None:
-        #     raise CourseNotFoundError(f"Course with {c_object.id} was not found")
+
         if updated_assignment_object is None:
             raise CourseNotFoundError(f"Course with c_id {c_id} and assignment with a_id {assn} was not found")
 

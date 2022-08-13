@@ -1,14 +1,14 @@
-from dotenv import dotenv_values
-
-from model.teacher import Teacher
+import os
 import psycopg
+from dotenv import dotenv_values
+from model.teacher import Teacher
 
 config = dotenv_values(".env")  # is a dict
 
+
 class TeacherDao:
     def get_t_by_id(self, t_id):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
-                             password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
 
             with conn.cursor() as cur:
                 cur.execute("SELECT * FROM teachers WHERE t_id = %s", (t_id,))
@@ -27,8 +27,7 @@ class TeacherDao:
 
     # for login logout and loginstatus endpoints
     def get_t_by_username_and_password(self, username, password):
-        with psycopg.connect(host=config['host'], port=config['port'], dbname=config['dbname'], user=config['user'],
-                       password=config['password']) as conn:
+        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
             with conn.cursor() as cur:
                 cur.execute("select * from teachers where username = %s and password = %s", (username, password))
                 t_info = cur.fetchone()
