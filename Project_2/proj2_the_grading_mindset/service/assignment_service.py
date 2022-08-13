@@ -12,8 +12,8 @@ class AssignmentService:
         self.assignment_dao = AssignmentDao()
         self.student_dao = StudentDao()
 
-    def get_all_assignments_by_s_id(self, s_id):
-        list_of_assignment_object = self.assignment_dao.get_all_assignments_by_s_id(s_id)
+    def get_all_assignments_by_s_id(self, s_id, a_filter_by_c):
+        list_of_assignment_object = self.assignment_dao.get_all_assignments_by_s_id(s_id, a_filter_by_c)
 
         if not list_of_assignment_object:
             raise StudentNotFoundError(f"Student with id {s_id} was not found")
@@ -60,7 +60,6 @@ class AssignmentService:
 
         return list_of_assignment_dictionaries
 
-
     def get_all_assignments_by_t_id_and_c_id(self, t_id, c_id):
         list_of_assignment_object = self.assignment_dao.get_all_assignments_by_t_id_and_c_id(t_id, c_id)
         if not list_of_assignment_object:
@@ -72,7 +71,6 @@ class AssignmentService:
             list_of_assignment_dictionaries.append(assignment_obj.to_dict())
 
         return list_of_assignment_dictionaries
-
 
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, assn, a_object):
         updated_assignment_object = self.assignment_dao.update_assignments_by_c_id_and_a_id(t_id, c_id, assn, a_object)

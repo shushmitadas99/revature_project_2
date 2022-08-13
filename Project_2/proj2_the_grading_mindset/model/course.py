@@ -16,7 +16,8 @@ class Course:
         }
 
 class SCourse:
-    def __init__(self, t_name, t_email, c_name, c_desc):
+    def __init__(self, c_id, t_name, t_email, c_name, c_desc):
+        self.c_id = c_id
         self.t_name = t_name
         self.t_email = t_email
         self.c_name = c_name
@@ -24,6 +25,7 @@ class SCourse:
 
     def to_dict(self):
         return {
+            "c_id": self.c_id,
             "t_name": self.t_name,
             "t_email": self.t_email,
             "c_name": self.c_name,
@@ -32,7 +34,8 @@ class SCourse:
 
 
 class TCourse:
-    def __init__(self, s_name, s_email, c_name, c_desc):
+    def __init__(self, c_id, s_name, s_email, c_name, c_desc):
+        self.c_id = c_id
         self.s_name = s_name
         self.s_email = s_email
         self.c_name = c_name
@@ -40,6 +43,7 @@ class TCourse:
 
     def to_dict(self):
         return {
+            "c_id": self.c_id,
             "s_name": self.s_name,
             "s_email": self.s_email,
             "c_name": self.c_name,

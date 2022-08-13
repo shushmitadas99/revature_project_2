@@ -9,6 +9,7 @@ cc = Blueprint('course_controller', __name__)
 
 course_service = CourseService()
 
+
 @cc.route('/slogin/<s_id>/c', methods=['GET'])
 def get_all_cs_by_s_id(s_id):
     try:
