@@ -25,7 +25,7 @@ def t_login():
     password = request_body_dict['password']
 
     try:
-        teacher_dict = teacher_service.teacher_login(username, password)
+        teacher_dict = teacher_service.t_login(username, password)
         session['t_info'] = teacher_dict
 
         return teacher_dict, 200
