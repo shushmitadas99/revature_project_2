@@ -28,6 +28,10 @@ async function get_all_details(){
         let s_id = sessionStorage.getItem('s_id')
         console.log(s_id);
 
+        sessionStorage.setItem("s_name", data.s_name)
+        let s_name = sessionStorage.getItem('s_name')
+        console.log(s_name);
+
         sessionStorage.setItem("s_email", data.s_email)
         let s_email = sessionStorage.getItem('s_email')
         console.log(s_email);

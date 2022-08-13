@@ -40,12 +40,52 @@ function s_course(courses){
     let tEmailCell = document.createElement('td');
     tEmailCell.innerHTML = courses.t_email;
 
+    // let cSelectCell = document.createElement('td');
+    // cSelectCell.innerHTML = courses.t_email;
+
+    // var label1 = document.createElement('label'); //******************* */
+    // label1.htmlFor = 'Approved';
+    // label1.innerHTML = 'Approve ';
+
+    var checkbox1 = document.createElement('input');
+    checkbox1.setAttribute('type', 'checkbox');
+    // radioInput1.setAttribute('name', "status_radio");
+    checkbox1.setAttribute('id', courses.c_id);
+    checkbox1.setAttribute('value', courses.c_id);
+
+    checkbox1.addEventListener("click", sush)
+   
+    //  checkbox1.addEventListener("click", sush)
+
+
+    // row.appendChild(cIdCell);
     row.appendChild(cNameCell);
     row.appendChild(cDescCell);
     row.appendChild(tNameCell);
     row.appendChild(tEmailCell);
+    row.appendChild(checkbox1);
 
     sViewCourseBodyElement.appendChild(row);
 
+    async function sush(){
+        sessionStorage.setItem("c_id", checkbox1.value)
+        let c_id = sessionStorage.getItem("c_id");
+        console.log(c_id);
 
+        // let c_id = sessionStorage.setItem(checkbox1.value);
+        // console.log(c_id);
+
+        let res = await fetch(`http://127.0.0.1:8080/slogin/${s_id}/c/${c_id}/a`, {
+              'credentials': 'include',
+              'method': 'POST',
+              'headers': {'Content-Type': 'application/json'},
+              'body': JSON.stringify({
+                  "grade": null
+              })
+            }) 
+            window.alert("Your assignment was submitted. Please visit'View Assignments' page to view all your assignments.");
+            window.location.href = '/s_homepage.html'
+            // if (res.status == 200)
+            // {}
+      }
 }

@@ -9,7 +9,7 @@ from service.student_service import StudentService
 
 
 def test_get_all_assignments_by_s_id_positive_multiple(mocker):
-    def mock_get_all_assignments_by_s_id(self, s_id):
+    def mock_get_all_assignments_by_s_id(self, s_id, a_filter_by_c):
         return [
             Sassignments(1, '2022-08-10 07:03:16.478', 'A', '2022-08-10 07:03:16.478', 'science'),
             Sassignments(2, '2022-08-10 07:03:16.478', 'B', '2022-08-10 07:03:16.478', 'math')
@@ -17,7 +17,7 @@ def test_get_all_assignments_by_s_id_positive_multiple(mocker):
 
     mocker.patch('dao.assignment_dao.AssignmentDao.get_all_assignments_by_s_id', mock_get_all_assignments_by_s_id)
     assignment_service = AssignmentService()
-    actual = assignment_service.get_all_assignments_by_s_id(s_id=1)
+    actual = assignment_service.get_all_assignments_by_s_id(s_id=1, a_filter_by_c=None)
     assert actual == [
         {
             "assn": 1,
@@ -36,12 +36,12 @@ def test_get_all_assignments_by_s_id_positive_multiple(mocker):
     ]
 
 def test_get_all_assignments_by_s_id_positive_single(mocker):
-    def mock_get_all_assignments_by_s_id(self, s_id):
+    def mock_get_all_assignments_by_s_id(self, s_id, a_filter_by_c):
         return [Sassignments(1, '2022-08-10 07:03:16.478', 'A', '2022-08-10 07:03:16.478', 'science')]
 
     mocker.patch('dao.assignment_dao.AssignmentDao.get_all_assignments_by_s_id', mock_get_all_assignments_by_s_id)
     assignment_service = AssignmentService()
-    actual = assignment_service.get_all_assignments_by_s_id(s_id=1)
+    actual = assignment_service.get_all_assignments_by_s_id(s_id=1, a_filter_by_c='science')
     assert actual == [
         {
             "assn": 1,
@@ -54,8 +54,8 @@ def test_get_all_assignments_by_s_id_positive_single(mocker):
 
 
 def test_get_all_assignments_by_s_id_negative(mocker):
-    def mock_get_all_assignments_by_s_id(self, s_id):
-        if s_id == "1":
+    def mock_get_all_assignments_by_s_id(self, s_id, a_filter_by_c):
+        if s_id == "1" and a_filter_by_c == None:
             return [Sassignments(1, '2022-08-10 07:03:16.478', 'A', '2022-08-10 07:03:16.478', 'science')]
         else:
             return None
@@ -63,7 +63,7 @@ def test_get_all_assignments_by_s_id_negative(mocker):
     mocker.patch("dao.assignment_dao.AssignmentDao.get_all_assignments_by_s_id", mock_get_all_assignments_by_s_id)
     assignment_service = AssignmentService()
     with pytest.raises(StudentNotFoundError) as excinfo:
-        assignment_service.get_all_assignments_by_s_id(s_id=1000)
+        assignment_service.get_all_assignments_by_s_id(s_id=1000, a_filter_by_c=None)
     assert str(excinfo.value) == f"Student with id 1000 was not found"
 
 
@@ -219,7 +219,6 @@ def test_add_assignments_to_c_id_positive(mocker):  # Test pass (if block commen
         "c_name": "science"
     }
 
-
 def test_add_assignments_to_c_id_negative_s_id(mocker):  # Test fail
     def mock_get_s_by_id(self, s_id):
         if s_id == "1":
@@ -231,7 +230,6 @@ def test_add_assignments_to_c_id_negative_s_id(mocker):  # Test fail
     with pytest.raises(StudentNotFoundError) as excinfo:
         student_service.get_s_by_id("1000")
     assert str(excinfo.value) == "Student with the id 1000 was not found"
-
 
 def test_add_assignments_to_c_id_negative_c_id(mocker): # Test fail
     a_object_to_add = assignment_model.Assignments(1, 1, None, None, None)
@@ -246,7 +244,6 @@ def test_add_assignments_to_c_id_negative_c_id(mocker): # Test fail
     with pytest.raises(CourseNotFoundError) as excinfo:
         assignment_service.add_assignments_to_c_id(a_object=a_object_to_add, s_id=1, c_id=1000)
     assert str(excinfo.value) == "Course with id 1000 was not found"
-
 
 def test_update_assignments_by_c_id_and_a_id_positive(mocker):
     updated_a_object = Assignments(1, 1,  None, 'A', None)
@@ -268,7 +265,6 @@ def test_update_assignments_by_c_id_and_a_id_positive(mocker):
         "grade": "A",
         "self.grade_time": None
         }
-
 
 def test_update_assignments_by_c_id_and_a_id_negative(mocker):
     updated_a_object = Assignments(8, 1, None, 'A', None)

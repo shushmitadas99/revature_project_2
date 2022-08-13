@@ -6,14 +6,14 @@ from exception.course_errors import CourseNotFoundError
 from exception.teacher_errors import TeacherNotFoundError
 
 class CourseService:
-    
+
     def __init__(self):
+        self.teacher_dao = TeacherDao()
         self.course_dao = CourseDao()
         self.student_dao = StudentDao()
-        self.teacher_dao = TeacherDao()
 
     def get_all_cs_by_s_id(self, s_id):
-        if self.course_dao.get_all_cs_by_s_id(s_id) is None:
+        if self.course_dao.get_all_cs_by_s_id(s_id) is None:  # added new correction instead of above if block
             raise StudentNotFoundError(f"Student with id {s_id} was not found")
         return list(map(lambda y: y.to_dict(), self.course_dao.get_all_cs_by_s_id(s_id)))
 
