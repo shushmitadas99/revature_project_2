@@ -1,17 +1,19 @@
 import os
-from datetime import datetime, timezone
+
 import psycopg
 from dotenv import dotenv_values
 from model.assignment_model import Assignments, Sassignments, Tassignments
+from datetime import datetime, timezone
 
 config = dotenv_values(".env")
+# import datetime
 
 
 class AssignmentDao:
-
+    # dt = datetime.datetime.now()
     # dt = datetime.now(timezone.utc)
-    current_time = datetime.now()
-    print(current_time)
+    # dt1 = datetime.now()
+    # print(current_time)
 
     def get_all_assignments_by_s_id(self, s_id, a_filter_by_c):
         with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
@@ -114,13 +116,13 @@ class AssignmentDao:
 
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, a_id, a_object):
         with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
-            current_time = datetime.datetime.now()
+            dt1 = datetime.now()
             print(a_object.grade)
             # print(current_time)
             with conn.cursor() as cur:
                 cur.execute(
                     "update assignments set grade = %s, grade_time = %s where assn = %s and c_id = %s returning *",
-                    (a_object.grade, current_time, a_id, c_id))
+                    (a_object.grade, dt1, a_id, c_id))
 
                 conn.commit()
 
