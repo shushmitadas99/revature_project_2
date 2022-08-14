@@ -53,19 +53,17 @@ function t_course(assignments){
     var label1 = document.createElement('label')
     label1.htmlFor = 'A';
     label1.innerHTML = 'A ';
+
     var radioInput1 = document.createElement('input');
     radioInput1.setAttribute('type', 'radio');
     radioInput1.setAttribute('name', "grade_radio");
     radioInput1.setAttribute('id', assignments.assn);
     radioInput1.setAttribute('value', 'A');
-    // var newline1 = document.createElement('br');
-    // label1.appendChild(newline1);
     label1.appendChild(radioInput1);
   
     radioInput1.addEventListener("click", ()=>{
       assn = assignments.assn;
-      //  gradeCell.innerHTML = "A";
-       grade = "A";
+      grade = "A";
       
     })
     radioInput1.addEventListener("click", sush)
@@ -76,80 +74,73 @@ function t_course(assignments){
    //-----------------------------------------------------------------
 
    var label2 = document.createElement('label')
-   label2.htmlFor = 'A';
-   label2.innerHTML = 'A ';
+   label2.htmlFor = 'B';
+   label2.innerHTML = 'B ';
+
    var radioInput2 = document.createElement('input');
    radioInput2.setAttribute('type', 'radio');
    radioInput2.setAttribute('name', "grade_radio");
    radioInput2.setAttribute('id', assignments.assn);
    radioInput2.setAttribute('value', 'B');
-   // var newline1 = document.createElement('br');
-   // label1.appendChild(newline1);
-   label1.appendChild(radioInput1);
+   label2.appendChild(radioInput2);
  
-   radioInput1.addEventListener("click", ()=>{
-     assn = assignments.assn;
-     //  gradeCell.innerHTML = "A";
-      grade = "A";
+   radioInput2.addEventListener("click", ()=>{
+    assn = assignments.assn;
+    grade = "B";
      
    })
-   radioInput1.addEventListener("click", sush)
+   radioInput2.addEventListener("click", sush)
    
-   var newline1 = document.createElement('br');
-   label1.appendChild(newline1);
+   var newline2 = document.createElement('br');
+   label2.appendChild(newline2);
 
   //-----------------------------------------------------------------
 
-  var label1 = document.createElement('label')
-  label1.htmlFor = 'A';
-  label1.innerHTML = 'A ';
-  var radioInput1 = document.createElement('input');
-  radioInput1.setAttribute('type', 'radio');
-  radioInput1.setAttribute('name', "grade_radio");
-  radioInput1.setAttribute('id', assignments.assn);
-  radioInput1.setAttribute('value', 'A');
-  // var newline1 = document.createElement('br');
-  // label1.appendChild(newline1);
-  label1.appendChild(radioInput1);
+  var label3 = document.createElement('label')
+  label3.htmlFor = 'C';
+  label3.innerHTML = 'C ';
 
-  radioInput1.addEventListener("click", ()=>{
+  var radioInput3 = document.createElement('input');
+  radioInput3.setAttribute('type', 'radio');
+  radioInput3.setAttribute('name', "grade_radio");
+  radioInput3.setAttribute('id', assignments.assn);
+  radioInput3.setAttribute('value', 'C');
+  label3.appendChild(radioInput3);
+
+  radioInput3.addEventListener("click", ()=>{
     assn = assignments.assn;
-    //  gradeCell.innerHTML = "A";
-     grade = "A";
+    grade = "C";
     
   })
-  radioInput1.addEventListener("click", sush)
+  radioInput3.addEventListener("click", sush)
   
-  var newline1 = document.createElement('br');
-  label1.appendChild(newline1);
+  var newline3 = document.createElement('br');
+  label3.appendChild(newline3);
 
  //-----------------------------------------------------------------
 
- var label1 = document.createElement('label')
- label1.htmlFor = 'A';
- label1.innerHTML = 'A ';
- var radioInput1 = document.createElement('input');
- radioInput1.setAttribute('type', 'radio');
- radioInput1.setAttribute('name', "grade_radio");
- radioInput1.setAttribute('id', assignments.assn);
- radioInput1.setAttribute('value', 'A');
- // var newline1 = document.createElement('br');
- // label1.appendChild(newline1);
- label1.appendChild(radioInput1);
+ var label4 = document.createElement('label')
+ label4.htmlFor = 'D';
+ label4.innerHTML = 'D ';
 
- radioInput1.addEventListener("click", ()=>{
-   assn = assignments.assn;
-   //  gradeCell.innerHTML = "A";
-    grade = "A";
+ var radioInput4 = document.createElement('input');
+ radioInput4.setAttribute('type', 'radio');
+ radioInput4.setAttribute('name', "grade_radio");
+ radioInput4.setAttribute('id', assignments.assn);
+ radioInput4.setAttribute('value', 'D');
+ label4.appendChild(radioInput4);
+
+ radioInput4.addEventListener("click", ()=>{
+  assn = assignments.assn;
+  grade = "D";
    
  })
- radioInput1.addEventListener("click", sush)
+ radioInput4.addEventListener("click", sush)
  
- var newline1 = document.createElement('br');
- label1.appendChild(newline1);
+ var newline4 = document.createElement('br');
+ label4.appendChild(newline4);
 
 //-----------------------------------------------------------------
-
 
 
     row.appendChild(aIDCell);
@@ -169,60 +160,24 @@ function t_course(assignments){
     tViewCourseBodyElement.appendChild(row);
 
 
-    
-
-
-    // let cSelectCell = document.createElement('td');
-    // cSelectCell.innerHTML = courses.t_email;
-
-    // var label1 = document.createElement('label'); //******************* */
-    // label1.htmlFor = 'Approved';
-    // label1.innerHTML = 'Approve ';
-
-    // var checkbox1 = document.createElement('input');
-    // checkbox1.setAttribute('type', 'checkbox');
-    // // radioInput1.setAttribute('name', "status_radio");
-    // checkbox1.setAttribute('id', courses.c_id);
-    // checkbox1.setAttribute('value', courses.c_id);
-
-    // checkbox1.addEventListener("click", sush)
-   
-    //  checkbox1.addEventListener("click", sush)
-
-
-    // row.appendChild(cIdCell);
-    // row.appendChild(cNameCell);
-    // row.appendChild(cDescCell);
-    // row.appendChild(tNameCell);
-    // row.appendChild(tEmailCell);
-    // row.appendChild(checkbox1);
-
-    // sViewCourseBodyElement.appendChild(row);
-
-    async function sush(){
-        // sessionStorage.setItem("c_id", c_id)
-        // let c_id = sessionStorage.getItem("c_id");
-        // console.log(c_id);
-
-        // let c_id = sessionStorage.setItem(checkbox1.value);
-        // console.log(c_id);
-
-        let res = await fetch(`http://127.0.0.1:8080/tlogin/${t_id}/c/${c_id}/a`, {
-              'credentials': 'include',
-              'method': 'PUT',
-              'headers': {'Content-Type': 'application/json'},
-              'body': JSON.stringify({
-                  "grade": grade
-              })
-            }) 
-            console.log(c_id);
-            console.log(t_id);
-            console.log(grade);
-            window.alert("Your assignment graded. ");
-            window.location.href = '/t_homepage.html'
-            // if (res.status == 200)
-            // {}
-      }
 }
 
 
+async function sush(){
+
+  let res = await fetch(`http://127.0.0.1:8080/tlogin/${t_id}/c/${c_id}/a/${assn}`, {
+        'credentials': 'include',
+        'method': 'PUT',
+        'headers': {'Content-Type': 'application/json'},
+        'body': JSON.stringify({
+            "grade": grade
+        })
+      }) 
+      console.log(c_id);
+      console.log(t_id);
+      console.log(grade);
+      window.alert("Assignment graded. Please head over to 'View Assignment'page to view details.");
+      window.location.href = '/t_homepage.html'
+      // if (res.status == 200)
+      // {}
+}

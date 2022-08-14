@@ -4,9 +4,9 @@ let c_id = sessionStorage.getItem('c_id');
 // let tBody = document.getElementById('s-course-data-output');
 let tViewCourseBodyElement = document.querySelector('#t-course-data-output');
 
-window.addEventListener('load', s_course_window_load);
+window.addEventListener('load', t_course_window_load);
 
-async function s_course_window_load(){
+async function t_course_window_load(){
     console.log(c_id);
     let res = await fetch(`http://127.0.0.1:8080/tlogin/${t_id}/c/${c_id}/a`, {
         headers: {
@@ -25,35 +25,6 @@ async function s_course_window_load(){
     
 }
 
-// var cs_name;
-// const dropDown = document.getElementById('status-filter') 
-// dropDown.addEventListener('change', async function(event) { 
-//   cs_name = event.target.value;
-//   console.log(cs_name);
-//   // let res = await fetch(`http://127.0.0.1:8080/reimbursements?status=${tempo}`, {
-//   let res = await fetch(`http://127.0.0.1:8080/slogin/${s_id}/a?c_name=${cs_name}`, { //===========================
-//     headers: {
-//       'Accept': 'application/json'
-//     }
-//   });
-  
-//     if (res.status == 200){
-//       let data = await res.json(); // res.json() returns a promise
-//       console.log(data["assignments"]); //accessing data using courses as key
-//       assignment_details_array = data["assignments"] //saving variable as array
-//       sViewCourseBodyElement.innerHTML = ""; //deleting previus table content
-//       for (let assignments of assignment_details_array){ //looping over array and each element is a dictionary
-//         console.log(assignments);
-//         s_course(assignments);
-//         }
-//     }
-
-//     if (res.status == 404){
-//         sViewCourseBodyElement.innerHTML = "";
-//         window.alert("No assignments for this course yet.");
-//     }
-
-// }) 
 
 function t_course(assignments){
     // let sViewCourseBodyElement = document.querySelector('#s-course-data-output');
