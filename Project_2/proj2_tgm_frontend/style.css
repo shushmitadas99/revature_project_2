@@ -1,3 +1,28 @@
+#topNav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    height: 50px;
+    margin-top: 30px;
+}
+
+#logout {
+    padding: 5px;
+    background-color: red;
+    color: white;
+    float:inline-end;
+    margin: 25px;
+}
+
+h1 {
+    font-size: 28px;
+    padding: 5px;
+    margin-top:30px;
+    text-align: center;
+    color:rgb(76, 76, 228);
+}
+
 #sBtn {
     margin: 30px;
     width: 500px;
@@ -24,6 +49,11 @@
 
 .tHomeBtn {
     background-color: rgb(45, 196, 222);
+}
+
+.table-container {
+    text-align: center;
+
 }
 
 .sHomeContainer1, .sHomeContainer2, .tHomeContainer1, .tHomeContainer2 {

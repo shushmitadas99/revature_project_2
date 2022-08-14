@@ -1,4 +1,4 @@
- let t_id = sessionStorage.getItem('t_id')
+let t_id = sessionStorage.getItem('t_id')
 let t_username = sessionStorage.getItem("username");
 console.log(t_id)
 
@@ -12,9 +12,6 @@ async function t_course_window_load(){
       });
     // if (res == 200){
         let data = await res.json(); // res.json() returns a promise
-        // sessionStorage.setItem("c_id", data.c_id)
-        // let c_id = sessionStorage.getItem('c_id')
-        // console.log("course_id" + c_id);
 
         console.log(data["courses"]); //accessing data using courses as key
         courses_details_array = data["courses"] //saving variable as array
