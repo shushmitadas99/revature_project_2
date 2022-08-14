@@ -68,13 +68,13 @@ class CourseDao:
                 #             "JOIN project2.courses c ON s.s_id = c.s_id WHERE t_id = %s", (t_id,))
 
                 # Shushmita's Database query:
-                cur.execute("SELECT s_name, s_email, c_name, c_desc FROM students s "
+                cur.execute("SELECT c.c_id, s_name, s_email, c_name, c_desc FROM students s "
                             "JOIN courses c ON s.s_id = c.s_id WHERE t_id = %s", (t_id,))
 
                 list_cs = []
 
                 for row in cur:
-                    list_cs.append(course.TCourse(row[0], row[1], row[2], row[3]))
+                    list_cs.append(course.TCourse(row[0], row[1], row[2], row[3],row[4]))
 
                 return list_cs
 
