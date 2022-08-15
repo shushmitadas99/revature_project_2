@@ -22,11 +22,11 @@ public class LoginStudent {
 
     @Given("I am at the student login page")
     public void i_am_at_the_student_login_page() {
-        TestRunner.driver.get("http://127.0.0.1:5500/index.html");
+        TestRunner.driver.get("http://ec2-54-164-157-51.compute-1.amazonaws.com/");
         loginPage = new LoginPage(TestRunner.driver);
         loginPage.clickStudentLoginButton();
         WebDriverWait wdw = new WebDriverWait(TestRunner.driver, Duration.ofSeconds(10));
-        wdw.until(ExpectedConditions.urlToBe("http://127.0.0.1:5500/s_login.html"));
+        wdw.until(ExpectedConditions.urlToBe("http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html"));
     }
 
     @When("I type in a susername of {string}")
@@ -47,15 +47,15 @@ public class LoginStudent {
     @Then("I should be redirected to the student homepage")
     public void i_should_be_redirected_to_the_student_homepage() {
         WebDriverWait wdw = new WebDriverWait(TestRunner.driver, Duration.ofSeconds(10));
-        wdw.until(ExpectedConditions.urlToBe("http://127.0.0.1:5500/s_homepage.html"));
+        wdw.until(ExpectedConditions.urlToBe("http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html"));
         Assert.assertEquals(TestRunner.driver.getCurrentUrl(), "http://127.0.0.1:5500/s_homepage.html");
     }
 
     @Then("I should stay on the student login page")
     public void i_should_stay_on_the_student_login_page() {
         WebDriverWait wdw = new WebDriverWait(TestRunner.driver, Duration.ofSeconds(2));
-        wdw.until(ExpectedConditions.urlToBe("http://127.0.0.1:5500/s_login.html"));
-        Assert.assertEquals(TestRunner.driver.getCurrentUrl(), "http://127.0.0.1:5500/s_login.html");
+        wdw.until(ExpectedConditions.urlToBe("http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html"));
+        Assert.assertEquals(TestRunner.driver.getCurrentUrl(), "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html");
     }
 
 }

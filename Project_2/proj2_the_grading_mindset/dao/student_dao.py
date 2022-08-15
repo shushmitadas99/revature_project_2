@@ -8,7 +8,8 @@ config = dotenv_values(".env")  # is a dict
 
 class StudentDao:
     def get_s_by_id(self, s_id):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
 
             with conn.cursor() as cur:
 
@@ -28,7 +29,8 @@ class StudentDao:
 
     # for login logout and loginstatus endpoints
     def get_s_by_username_and_password(self, username, password):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
             with conn.cursor() as cur:
 
                 cur.execute("select * from students where username = %s and password = %s",
