@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="15" passed="15">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Login Test Suite" duration-ms="45302" started-at="2022-08-14T21:39:19 EDT" finished-at="2022-08-14T21:40:04 EDT">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="My Login tests" duration-ms="45302" started-at="2022-08-14T21:39:19 EDT" finished-at="2022-08-14T21:40:04 EDT">
+      <class name="com.revature.runner.TestRunner">
+        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setUpClass" is-config="true" duration-ms="157" started-at="2022-08-14T21:39:19 EDT" finished-at="2022-08-14T21:39:19 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1f71194d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="3052" started-at="2022-08-14T21:39:19 EDT" finished-at="2022-08-14T21:39:22 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="3809" started-at="2022-08-14T21:39:22 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:26 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Valid login Student #1"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="592" started-at="2022-08-14T21:39:26 EDT" finished-at="2022-08-14T21:39:27 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1750" started-at="2022-08-14T21:39:27 EDT" finished-at="2022-08-14T21:39:29 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="909" started-at="2022-08-14T21:39:29 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:29 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Valid login Student #2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="597" started-at="2022-08-14T21:39:29 EDT" finished-at="2022-08-14T21:39:30 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1744" started-at="2022-08-14T21:39:30 EDT" finished-at="2022-08-14T21:39:32 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="390" started-at="2022-08-14T21:39:32 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:32 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid login Student #1"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="594" started-at="2022-08-14T21:39:32 EDT" finished-at="2022-08-14T21:39:33 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1922" started-at="2022-08-14T21:39:33 EDT" finished-at="2022-08-14T21:39:35 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="374" started-at="2022-08-14T21:39:35 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:35 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid login Student #2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="578" started-at="2022-08-14T21:39:35 EDT" finished-at="2022-08-14T21:39:36 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1970" started-at="2022-08-14T21:39:36 EDT" finished-at="2022-08-14T21:39:38 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="380" started-at="2022-08-14T21:39:38 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:38 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid login Student #3"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="585" started-at="2022-08-14T21:39:38 EDT" finished-at="2022-08-14T21:39:39 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1071" started-at="2022-08-14T21:39:39 EDT" finished-at="2022-08-14T21:39:40 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="929" started-at="2022-08-14T21:39:40 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:41 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Valid login Teacher #1"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="598" started-at="2022-08-14T21:39:41 EDT" finished-at="2022-08-14T21:39:41 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1745" started-at="2022-08-14T21:39:41 EDT" finished-at="2022-08-14T21:39:43 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="898" started-at="2022-08-14T21:39:43 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:44 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Valid login Teacher #2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="577" started-at="2022-08-14T21:39:44 EDT" finished-at="2022-08-14T21:39:44 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1744" started-at="2022-08-14T21:39:44 EDT" finished-at="2022-08-14T21:39:46 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="383" started-at="2022-08-14T21:39:46 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:47 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid login Teacher #1"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="555" started-at="2022-08-14T21:39:47 EDT" finished-at="2022-08-14T21:39:47 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1069" started-at="2022-08-14T21:39:47 EDT" finished-at="2022-08-14T21:39:48 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="379" started-at="2022-08-14T21:39:48 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:49 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid login Teacher #2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="574" started-at="2022-08-14T21:39:49 EDT" finished-at="2022-08-14T21:39:49 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1775" started-at="2022-08-14T21:39:49 EDT" finished-at="2022-08-14T21:39:51 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="389" started-at="2022-08-14T21:39:51 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:51 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid login Teacher #3"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="596" started-at="2022-08-14T21:39:51 EDT" finished-at="2022-08-14T21:39:52 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1998" started-at="2022-08-14T21:39:52 EDT" finished-at="2022-08-14T21:39:54 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="388" started-at="2022-08-14T21:39:54 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:54 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["View all assignments"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["View all assignments"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="595" started-at="2022-08-14T21:39:54 EDT" finished-at="2022-08-14T21:39:55 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1951" started-at="2022-08-14T21:39:55 EDT" finished-at="2022-08-14T21:39:57 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="298" started-at="2022-08-14T21:39:57 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:57 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["View all courses"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["View all courses"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="590" started-at="2022-08-14T21:39:57 EDT" finished-at="2022-08-14T21:39:58 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1073" started-at="2022-08-14T21:39:58 EDT" finished-at="2022-08-14T21:39:59 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="359" started-at="2022-08-14T21:39:59 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:39:59 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[""]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Filter assignments"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="596" started-at="2022-08-14T21:39:59 EDT" finished-at="2022-08-14T21:40:00 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1897" started-at="2022-08-14T21:40:00 EDT" finished-at="2022-08-14T21:40:02 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="303" started-at="2022-08-14T21:40:02 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:40:02 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[""]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["View All Assignments"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="575" started-at="2022-08-14T21:40:02 EDT" finished-at="2022-08-14T21:40:03 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1083" started-at="2022-08-14T21:40:03 EDT" finished-at="2022-08-14T21:40:04 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="297" started-at="2022-08-14T21:40:04 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-14T21:40:04 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[""]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["View All Courses"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="579" started-at="2022-08-14T21:40:04 EDT" finished-at="2022-08-14T21:40:04 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="tearDownClass" is-config="true" duration-ms="5" started-at="2022-08-14T21:40:04 EDT" finished-at="2022-08-14T21:40:04 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.revature.runner.TestRunner -->
+    </test> <!-- My Login tests -->
+  </suite> <!-- Login Test Suite -->
+</testng-results>
