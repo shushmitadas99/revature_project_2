@@ -18,7 +18,7 @@ public class TViewAllCourses {
 
     @Given("I am at the teacher homepage #2")
     public void i_am_at_the_teacher_homepage() {
-        TestRunner.driver.get("http://127.0.0.1:5500/t_homepage.html");
+        TestRunner.driver.get("http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html");
         teacherHomepage = new TeacherHomepage(TestRunner.driver);
     }
 
@@ -30,7 +30,7 @@ public class TViewAllCourses {
     @Then("I will see all the courses I am currently teaching")
     public void i_will_see_all_the_courses_I_am_currently_teaching() {
         WebDriverWait wdw = new WebDriverWait(TestRunner.driver, Duration.ofSeconds(10));
-        wdw.until(ExpectedConditions.urlToBe("http://127.0.0.1:5500/t_view_courses.html"));
-        Assert.assertEquals(TestRunner.driver.getCurrentUrl(), "http://127.0.0.1:5500/t_view_courses.html");
+        wdw.until(ExpectedConditions.urlToBe("http://ec2-54-164-157-51.compute-1.amazonaws.com/t_view_courses.html"));
+        Assert.assertEquals(TestRunner.driver.getCurrentUrl(), "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_view_courses.html");
     }
 }

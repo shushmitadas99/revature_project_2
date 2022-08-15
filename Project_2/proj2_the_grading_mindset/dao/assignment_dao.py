@@ -16,7 +16,8 @@ class AssignmentDao:
     # print(current_time)
 
     def get_all_assignments_by_s_id(self, s_id, a_filter_by_c):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
             with conn.cursor() as cur:
 
                 if a_filter_by_c == 'science':
@@ -46,8 +47,8 @@ class AssignmentDao:
                 return assignment_list
 
     def get_all_assignments_by_c_id(self, s_id, c_id):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
-
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
             with conn.cursor() as cur:
                 cur.execute("select a.assn, a.submitted, a.grade, a.grade_time, c.c_name, c.c_desc, c.s_id "
                             "from assignments a join courses c on a.c_id = c.c_id and c.c_id in(select c_id "
@@ -63,7 +64,8 @@ class AssignmentDao:
                 return assignment_list
 
     def add_assignments_to_c_id(self, s_id, c_id, a_object):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
 
             with conn.cursor() as cur:
                 cur.execute("select * from courses where s_id = %s and c_id = %s", (s_id, c_id))
@@ -81,7 +83,8 @@ class AssignmentDao:
                                      assignment_row_inserted[3], assignment_row_inserted[4])
 
     def get_all_assignments_by_t_id(self, t_id):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
             with conn.cursor() as cur:
                 cur.execute(
                     "select a.assn,a.submitted,a.grade,a.grade_time,c.c_name from assignments a join courses c on "
@@ -97,7 +100,8 @@ class AssignmentDao:
                 return assignment_list
 
     def get_all_assignments_by_t_id_and_c_id(self, t_id, c_id):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
             with conn.cursor() as cur:
                 cur.execute("select a.assn, s.s_name, c.c_name,c.c_desc, a.submitted, a.grade, a.grade_time from "
                             " assignments a inner join courses c on a.c_id = c.c_id "
@@ -115,10 +119,9 @@ class AssignmentDao:
                 return assignment_list
 
     def update_assignments_by_c_id_and_a_id(self, t_id, c_id, a_id, a_object):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
             dt1 = datetime.now()
-            print(a_object.grade)
-            # print(current_time)
             with conn.cursor() as cur:
                 cur.execute(
                     "update assignments set grade = %s, grade_time = %s where assn = %s and c_id = %s returning *",
