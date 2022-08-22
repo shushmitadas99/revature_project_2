@@ -8,7 +8,8 @@ config = dotenv_values(".env")  # is a dict
 
 class StudentDao:
     def get_s_by_id(self, s_id):
-        with psycopg.connect(host=config.get('host'), user=config.get('user'), password=config.get('password')) as conn:
+        with psycopg.connect(host=config.get('host'), port=config.get('port'), dbname=config.get('dbname'),
+                             user=config.get('user'), password=config.get('password')) as conn:
 
             with conn.cursor() as cur:
 
