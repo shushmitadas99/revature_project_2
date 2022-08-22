@@ -56,11 +56,11 @@ public class LoginPage {
     public void clickTeacherLoginButton () {
         teacherLoginButton.click();
     }
-    public void ttypeUsername (String username) {
-        tusernameInput.sendKeys(username);
+    public void ttypeUsername (String tusername) {
+        tusernameInput.sendKeys(tusername);
     }
-    public void ttypePassword (String password) {
-        tpasswordInput.sendKeys(password);
+    public void ttypePassword (String tpassword) {
+        tpasswordInput.sendKeys(tpassword);
     }
     public void tclickLoginButton () {
         tloginButton.click();

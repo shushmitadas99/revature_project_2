@@ -12,10 +12,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+
 @CucumberOptions(glue="com.revature.steps", features={"src/test/resources/login_student.feature",
-        "src/test/resources/login_teacher.feature", "src/test/resources/student_all_assignments.feature",
-        "src/test/resources/student_all_courses.feature", "src/test/resources/student_filter_assignments.feature",
-        "src/test/resources/teacher_all_assignments.feature", "src/test/resources/teacher_all_courses.feature"})
+        "src/test/resources/login_teacher.feature",
+        "src/test/resources/student_all_assignments.feature",
+        "src/test/resources/student_all_courses.feature",
+        "src/test/resources/student_filter_assignments.feature",
+        "src/test/resources/teacher_all_assignments.feature",
+        "src/test/resources/teacher_all_courses.feature"})
 public class TestRunner extends AbstractTestNGCucumberTests {
 
     public static WebDriver driver;
