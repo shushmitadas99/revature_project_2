@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>My Login tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>11/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>15/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Aug 15 03:43:16 EDT 2022</td>
+<td>Started on:</td><td>Sun Aug 21 21:15:13 EDT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>76 seconds (76728 ms)</td>
+<tr><td>Total time:</td><td>38 seconds (38913 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,118 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Teacher #2", "login"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52866}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52866/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3e283a146d2f3cc01e7a876f2c523ef5
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginTeacher.i_should_be_redirected_to_the_teacher_homepage(LoginTeacher.java:50)
-	at ?.I should be redirected to the teacher homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_teacher.feature:15)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1141264726", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1141264726'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52866}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52866/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3e283a146d2f3cc01e7a876f2c523ef5
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginTeacher.i_should_be_redirected_to_the_teacher_homepage(LoginTeacher.java:50)
-	at ?.I should be redirected to the teacher homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_teacher.feature:15)
-</pre></div></td>
-<td>10</td>
-<td>com.revature.runner.TestRunner@17d0685f</td></tr>
-<tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Student #1", "login"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62693/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: ed65c7462ebddd9937a9b237b834512b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginStudent.i_should_be_redirected_to_the_student_homepage(LoginStudent.java:50)
-	at ?.I should be redirected to the student homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_student.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace700631078", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace700631078'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62693/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: ed65c7462ebddd9937a9b237b834512b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginStudent.i_should_be_redirected_to_the_student_homepage(LoginStudent.java:50)
-	at ?.I should be redirected to the student homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_student.feature:8)
-</pre></div></td>
-<td>13</td>
-<td>com.revature.runner.TestRunner@17d0685f</td></tr>
-<tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Student #2", "login"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62715}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62715/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0074aca57a6a4f211ef5db5b2b923a5d
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginStudent.i_should_be_redirected_to_the_student_homepage(LoginStudent.java:50)
-	at ?.I should be redirected to the student homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_student.feature:15)
-</pre></div><a href='#' onClick='toggleBox("stack-trace719146276", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace719146276'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62715}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62715/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0074aca57a6a4f211ef5db5b2b923a5d
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginStudent.i_should_be_redirected_to_the_student_homepage(LoginStudent.java:50)
-	at ?.I should be redirected to the student homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_student.feature:15)
-</pre></div></td>
-<td>10</td>
-<td>com.revature.runner.TestRunner@17d0685f</td></tr>
-<tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Teacher #1", "login"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52838}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52838/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: bbd8d52e450be334de1d05806cccea87
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginTeacher.i_should_be_redirected_to_the_teacher_homepage(LoginTeacher.java:50)
-	at ?.I should be redirected to the teacher homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_teacher.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace408543908", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace408543908'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html&quot;. Current url: &quot;http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;MSI&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_333&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52838}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52838/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: bbd8d52e450be334de1d05806cccea87
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.revature.steps.LoginTeacher.i_should_be_redirected_to_the_teacher_homepage(LoginTeacher.java:50)
-	at ?.I should be redirected to the teacher homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_teacher.feature:8)
-</pre></div></td>
-<td>10</td>
-<td>com.revature.runner.TestRunner@17d0685f</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -187,24 +75,9 @@ Session ID: bbd8d52e450be334de1d05806cccea87
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Student #1", "login"</td>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Teacher #1", "login"</td>
 <td></td>
-<td>0</td>
-<td>com.revature.runner.TestRunner@17d0685f</td></tr>
-<tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "Filter assignments"</td>
-<td></td>
-<td>0</td>
-<td>com.revature.runner.TestRunner@17d0685f</td></tr>
-<tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Student #3", "login"</td>
-<td></td>
-<td>0</td>
-<td>com.revature.runner.TestRunner@17d0685f</td></tr>
-<tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "View all courses", "View all courses"</td>
-<td></td>
-<td>0</td>
+<td>1</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>
 <tr>
 <td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "View All Assignments"</td>
@@ -212,7 +85,7 @@ Session ID: bbd8d52e450be334de1d05806cccea87
 <td>0</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>
 <tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Student #2", "login"</td>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "View All Courses"</td>
 <td></td>
 <td>0</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>
@@ -222,12 +95,32 @@ Session ID: bbd8d52e450be334de1d05806cccea87
 <td>0</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>
 <tr>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Student #2", "login"</td>
+<td></td>
+<td>0</td>
+<td>com.revature.runner.TestRunner@17d0685f</td></tr>
+<tr>
 <td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "View all assignments", "View all assignments"</td>
 <td></td>
 <td>0</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>
 <tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Teacher #1", "login"</td>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Student #1", "login"</td>
+<td></td>
+<td>4</td>
+<td>com.revature.runner.TestRunner@17d0685f</td></tr>
+<tr>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Student #2", "login"</td>
+<td></td>
+<td>0</td>
+<td>com.revature.runner.TestRunner@17d0685f</td></tr>
+<tr>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Student #1", "login"</td>
+<td></td>
+<td>0</td>
+<td>com.revature.runner.TestRunner@17d0685f</td></tr>
+<tr>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Student #3", "login"</td>
 <td></td>
 <td>0</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>
@@ -237,7 +130,22 @@ Session ID: bbd8d52e450be334de1d05806cccea87
 <td>0</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>
 <tr>
-<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "View All Courses"</td>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid login Teacher #2", "login"</td>
+<td></td>
+<td>0</td>
+<td>com.revature.runner.TestRunner@17d0685f</td></tr>
+<tr>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid login Teacher #1", "login"</td>
+<td></td>
+<td>0</td>
+<td>com.revature.runner.TestRunner@17d0685f</td></tr>
+<tr>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "View all courses", "View all courses"</td>
+<td></td>
+<td>0</td>
+<td>com.revature.runner.TestRunner@17d0685f</td></tr>
+<tr>
+<td title='com.revature.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.revature.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "", "Filter assignments"</td>
 <td></td>
 <td>0</td>
 <td>com.revature.runner.TestRunner@17d0685f</td></tr>

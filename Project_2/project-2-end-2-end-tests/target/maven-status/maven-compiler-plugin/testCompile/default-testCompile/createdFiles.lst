@@ -1,0 +1,11 @@
+com\revature\steps\TViewAllAssignments.class
+com\revature\steps\LoginStudent.class
+com\revature\steps\SViewAllAssignments.class
+com\revature\steps\TViewAllCourses.class
+com\revature\pages\TeacherHomepage.class
+com\revature\pages\StudentHomepage.class
+com\revature\runner\TestRunner.class
+com\revature\steps\LoginTeacher.class
+com\revature\pages\LoginPage.class
+com\revature\steps\SViewAllCourses.class
+com\revature\steps\SFilterAssignments.class
