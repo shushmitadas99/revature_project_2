@@ -19,4 +19,5 @@ if __name__ == '__main__':
     app.register_blueprint(tc)
     app.register_blueprint(cc)
     app.register_blueprint(ac)
+
     app.run(port=8080, debug=True)

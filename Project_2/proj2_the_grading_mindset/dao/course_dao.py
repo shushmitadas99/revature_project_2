@@ -10,7 +10,7 @@ config = dotenv_values(".env")
 class CourseDao:
 
     def get_all_cs_by_s_id(self, s_id):  # TODO: added c_id
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config['db_url'], user=config['db_username'], password=config['db_password']) as conn:
 
             with conn.cursor() as cur:
                 # Shushmita's Database query:
@@ -25,7 +25,7 @@ class CourseDao:
                 return list_cs
 
     def add_c_to_s(self, c_object):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config['db_url'], user=config['db_username'], password=config['db_password']) as conn:
 
             with conn.cursor() as cur:
                 # Shushmita's Database query:
@@ -41,7 +41,7 @@ class CourseDao:
                                      reimb_row_inserted[3], reimb_row_inserted[4])
 
     def update_c_by_ids(self, c_object):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config['db_url'], user=config['db_username'], password=config['db_password']) as conn:
 
             with conn.cursor() as cur:
 
@@ -60,7 +60,7 @@ class CourseDao:
                                      c_row_updated[4])
 
     def get_all_cs_by_t_id(self, t_id):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config['db_url'], user=config['db_username'], password=config['db_password']) as conn:
 
             with conn.cursor() as cur:
                 # Jace's Database query:
@@ -79,7 +79,7 @@ class CourseDao:
                 return list_cs
 
     def add_c_to_t(self, c_object):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config['db_url'], user=config['db_username'], password=config['db_password']) as conn:
 
             with conn.cursor() as cur:
                 # Please use the appropriate database query for testing endpoint:
@@ -104,7 +104,7 @@ class CourseDao:
                                      reimb_row_inserted[3], reimb_row_inserted[4])
 
     def update_c_by_ids_t(self, c_object):
-        with psycopg.connect(host=os.getenv('db_url'), user=os.getenv('db_username'), password=os.getenv('db_password')) as conn:
+        with psycopg.connect(host=config['db_url'], user=config['db_username'], password=config['db_password']) as conn:
 
             with conn.cursor() as cur:
                 # Please use the appropriate database query for testing endpoint:
