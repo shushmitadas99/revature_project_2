@@ -4,6 +4,7 @@ from exception.student_errors import StudentNotFoundError
 from exception.teacher_errors import TeacherNotFoundError
 from model import assignment_model
 from model.assignment_model import Sassignments, Assignments
+from model.student import Student
 from service.assignment_service import AssignmentService
 from service.student_service import StudentService
 
@@ -194,12 +195,14 @@ def test_get_all_assignments_by_t_id_negative(mocker):
         assignment_service.get_all_assignments_by_t_id(t_id=1000)
     assert str(excinfo.value) == f"Teacher with id 1000 was not found"
 
-
 def test_add_assignments_to_c_id_positive(mocker):  # Test pass (if block commented)
+    def mock_get_s_by_id(self, s_id):
+        return Student(1, "student1", "password1", "Student One", "student1@email.com")
     def mock_add_assignments_to_c_id(submitted, grade, grade_time, c_name):
         if submitted is None and grade is None and grade_time is None and c_name == "science":
             return None
     mocker.patch("dao.assignment_dao.AssignmentDao.add_assignments_to_c_id", mock_add_assignments_to_c_id)
+    mocker.patch("dao.student_dao.StudentDao.get_s_by_id", mock_get_s_by_id)
     a_object_to_add = assignment_model.Sassignments(1, None, None, None, "science")
 
     def mock_add_assignments_to_c_id(self, s_id, c_id, a_object):
@@ -232,6 +235,8 @@ def test_add_assignments_to_c_id_negative_s_id(mocker):  # Test fail
     assert str(excinfo.value) == "Student with the id 1000 was not found"
 
 def test_add_assignments_to_c_id_negative_c_id(mocker): # Test fail
+    def mock_get_s_by_id(self, s_id):
+        return Student(1, "student1", "password1", "Student One", "student1@email.com")
     a_object_to_add = assignment_model.Assignments(1, 1, None, None, None)
 
     def mock_add_assignments_to_c_id(self, s_id, c_id, a_object):
@@ -239,6 +244,7 @@ def test_add_assignments_to_c_id_negative_c_id(mocker): # Test fail
             return assignment_model.Assignments(1, 1, None, None, None)
         else:
             return None
+    mocker.patch("dao.student_dao.StudentDao.get_s_by_id", mock_get_s_by_id)
     mocker.patch("dao.assignment_dao.AssignmentDao.add_assignments_to_c_id", mock_add_assignments_to_c_id)
     assignment_service = AssignmentService()
     with pytest.raises(CourseNotFoundError) as excinfo:

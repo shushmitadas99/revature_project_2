@@ -2,6 +2,8 @@ import pytest
 import pytest_mock
 from dotenv import dotenv_values
 import model.course as course
+from model.student import Student
+from model.teacher import Teacher
 from service.course_service import CourseService
 from exception.course_errors import CourseNotFoundError
 from exception.student_errors import StudentNotFoundError
@@ -68,10 +70,13 @@ def test_get_all_cs_by_s_id_negative(mocker):
 
 
 def test_add_c_to_s_positive(mocker):
+    def mock_get_s_by_id(self, s_id):
+        return Student(1, "student1", "password1", "Student One", "student1@email.com")
     def mock_add_c_to_s(c_name, c_desc, s_id, t_id):
         if c_name == "science" and c_desc == "chemistry" and s_id == 1 and t_id == 1:
             return None
     mocker.patch("dao.course_dao.CourseDao.add_c_to_s", mock_add_c_to_s)
+    mocker.patch("dao.student_dao.StudentDao.get_s_by_id", mock_get_s_by_id)
     c_object_to_add = course.Course(None, "science", "chemistry", 1, 1)
 
     def mock_add_c_to_s(self, c_object):
@@ -93,6 +98,9 @@ def test_add_c_to_s_positive(mocker):
 
 
 def test_add_c_to_s_negative(mocker):
+    def mock_get_s_by_id(self, s_id):
+        return None
+
     c_object_to_add = course.Course(None, "history", "renaissance", 10, 1)
 
     def mock_add_c_to_s(self, c_object):
@@ -100,6 +108,7 @@ def test_add_c_to_s_negative(mocker):
             return course.Course(None, "history", "renaissance", 10, 1)
 
     mocker.patch("dao.course_dao.CourseDao.add_c_to_s", mock_add_c_to_s)
+    mocker.patch("dao.student_dao.StudentDao.get_s_by_id", mock_get_s_by_id)
     course_service = CourseService()
     with pytest.raises(StudentNotFoundError) as excinfo:
         course_service.add_c_to_s(c_object_to_add)
@@ -199,10 +208,14 @@ def test_get_all_cs_by_t_id_negative(mocker):
 
 
 def test_add_c_to_t_positive(mocker):
+    def mock_get_t_by_id(self, t_id):
+        return Teacher(1, "student1", "password1", "Student One", "student1@email.com")
+
     def mock_add_c_to_t(c_name, c_desc, s_id, t_id):
         if c_name == "science" and c_desc == "chemistry" and s_id == 1 and t_id == 1:
             return None
     mocker.patch("dao.course_dao.CourseDao.add_c_to_t", mock_add_c_to_t)
+    mocker.patch("dao.teacher_dao.TeacherDao.get_t_by_id", mock_get_t_by_id)
     c_object_to_add = course.Course(None, "science", "chemistry", 1, 1)
 
     def mock_add_c_to_t(self, c_object):
@@ -223,6 +236,9 @@ def test_add_c_to_t_positive(mocker):
     }
 
 def test_add_c_to_t_negative(mocker):
+    def mock_get_t_by_id(self, t_id):
+        return None
+
     c_object_to_add = course.Course(None, "history", "renaissance", 1, 10)
 
     def mock_add_c_to_t(self, c_object):
@@ -230,6 +246,7 @@ def test_add_c_to_t_negative(mocker):
             return course.Course(None, "history", "renaissance", 1, 10)
 
     mocker.patch("dao.course_dao.CourseDao.add_c_to_t", mock_add_c_to_t)
+    mocker.patch("dao.teacher_dao.TeacherDao.get_t_by_id", mock_get_t_by_id)
     course_service = CourseService()
     with pytest.raises(TeacherNotFoundError) as excinfo:
         course_service.add_c_to_t(c_object_to_add)
