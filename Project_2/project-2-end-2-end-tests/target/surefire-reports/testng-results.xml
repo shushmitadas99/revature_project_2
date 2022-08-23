@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="4" ignored="0" total="15" passed="11">
+<testng-results skipped="0" failed="0" ignored="0" total="15" passed="15">
   <reporter-output>
   </reporter-output>
-  <suite name="Login Test Suite" duration-ms="76728" started-at="2022-08-15T03:43:16 EDT" finished-at="2022-08-15T03:44:33 EDT">
+  <suite name="Login Test Suite" duration-ms="38913" started-at="2022-08-21T21:15:13 EDT" finished-at="2022-08-21T21:15:52 EDT">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="My Login tests" duration-ms="76728" started-at="2022-08-15T03:43:16 EDT" finished-at="2022-08-15T03:44:33 EDT">
+    <test name="My Login tests" duration-ms="38913" started-at="2022-08-21T21:15:13 EDT" finished-at="2022-08-21T21:15:52 EDT">
       <class name="com.revature.runner.TestRunner">
-        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setUpClass" is-config="true" duration-ms="169" started-at="2022-08-15T03:43:16 EDT" finished-at="2022-08-15T03:43:16 EDT">
+        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setUpClass" is-config="true" duration-ms="174" started-at="2022-08-21T21:15:13 EDT" finished-at="2022-08-21T21:15:13 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@32a72c4]]>
+                <![CDATA[org.testng.TestRunner@57fdb8a4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="2302" started-at="2022-08-15T03:43:16 EDT" finished-at="2022-08-15T03:43:18 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="3548" started-at="2022-08-21T21:15:13 EDT" finished-at="2022-08-21T21:15:17 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="13164" started-at="2022-08-15T03:43:18 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:43:31 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="4198" started-at="2022-08-21T21:15:17 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:21 EDT">
           <params>
             <param index="0">
               <value>
@@ -38,41 +38,18 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62693/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: ed65c7462ebddd9937a9b237b834512b]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62693/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: ed65c7462ebddd9937a9b237b834512b
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at com.revature.steps.LoginStudent.i_should_be_redirected_to_the_student_homepage(LoginStudent.java:50)
-at ✽.I should be redirected to the student homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_student.feature:8)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="594" started-at="2022-08-15T03:43:31 EDT" finished-at="2022-08-15T03:43:32 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="592" started-at="2022-08-21T21:15:21 EDT" finished-at="2022-08-21T21:15:21 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1024" started-at="2022-08-15T03:43:32 EDT" finished-at="2022-08-15T03:43:33 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1154" started-at="2022-08-21T21:15:21 EDT" finished-at="2022-08-21T21:15:23 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="10787" started-at="2022-08-15T03:43:33 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:43:44 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="897" started-at="2022-08-21T21:15:23 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:23 EDT">
           <params>
             <param index="0">
               <value>
@@ -85,41 +62,18 @@ at ✽.I should be redirected to the student homepage(file:///C:/Users/jacel/Int
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62715}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62715/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0074aca57a6a4f211ef5db5b2b923a5d]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62715}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62715/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0074aca57a6a4f211ef5db5b2b923a5d
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at com.revature.steps.LoginStudent.i_should_be_redirected_to_the_student_homepage(LoginStudent.java:50)
-at ✽.I should be redirected to the student homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_student.feature:15)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="582" started-at="2022-08-15T03:43:44 EDT" finished-at="2022-08-15T03:43:44 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="598" started-at="2022-08-21T21:15:23 EDT" finished-at="2022-08-21T21:15:24 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1054" started-at="2022-08-15T03:43:44 EDT" finished-at="2022-08-15T03:43:46 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1075" started-at="2022-08-21T21:15:24 EDT" finished-at="2022-08-21T21:15:25 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="516" started-at="2022-08-15T03:43:46 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:43:46 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="384" started-at="2022-08-21T21:15:25 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:26 EDT">
           <params>
             <param index="0">
               <value>
@@ -135,15 +89,15 @@ at ✽.I should be redirected to the student homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="573" started-at="2022-08-15T03:43:46 EDT" finished-at="2022-08-15T03:43:47 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="602" started-at="2022-08-21T21:15:26 EDT" finished-at="2022-08-21T21:15:26 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1076" started-at="2022-08-15T03:43:47 EDT" finished-at="2022-08-15T03:43:48 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1070" started-at="2022-08-21T21:15:26 EDT" finished-at="2022-08-21T21:15:27 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="534" started-at="2022-08-15T03:43:48 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:43:48 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="382" started-at="2022-08-21T21:15:27 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:28 EDT">
           <params>
             <param index="0">
               <value>
@@ -159,15 +113,15 @@ at ✽.I should be redirected to the student homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="583" started-at="2022-08-15T03:43:48 EDT" finished-at="2022-08-15T03:43:49 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="563" started-at="2022-08-21T21:15:28 EDT" finished-at="2022-08-21T21:15:28 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1036" started-at="2022-08-15T03:43:49 EDT" finished-at="2022-08-15T03:43:50 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1078" started-at="2022-08-21T21:15:28 EDT" finished-at="2022-08-21T21:15:29 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="534" started-at="2022-08-15T03:43:50 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:43:50 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="430" started-at="2022-08-21T21:15:29 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:30 EDT">
           <params>
             <param index="0">
               <value>
@@ -183,15 +137,15 @@ at ✽.I should be redirected to the student homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="580" started-at="2022-08-15T03:43:50 EDT" finished-at="2022-08-15T03:43:51 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="589" started-at="2022-08-21T21:15:30 EDT" finished-at="2022-08-21T21:15:30 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1003" started-at="2022-08-15T03:43:51 EDT" finished-at="2022-08-15T03:43:52 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1061" started-at="2022-08-21T21:15:30 EDT" finished-at="2022-08-21T21:15:31 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="10782" started-at="2022-08-15T03:43:52 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:03 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="1428" started-at="2022-08-21T21:15:31 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:33 EDT">
           <params>
             <param index="0">
               <value>
@@ -204,41 +158,18 @@ at ✽.I should be redirected to the student homepage(file:///C:/Users/jacel/Int
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52838}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52838/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: bbd8d52e450be334de1d05806cccea87]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52838}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52838/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: bbd8d52e450be334de1d05806cccea87
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at com.revature.steps.LoginTeacher.i_should_be_redirected_to_the_teacher_homepage(LoginTeacher.java:50)
-at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_teacher.feature:8)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="622" started-at="2022-08-15T03:44:03 EDT" finished-at="2022-08-15T03:44:03 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="597" started-at="2022-08-21T21:15:33 EDT" finished-at="2022-08-21T21:15:33 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1072" started-at="2022-08-15T03:44:03 EDT" finished-at="2022-08-15T03:44:04 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1062" started-at="2022-08-21T21:15:33 EDT" finished-at="2022-08-21T21:15:34 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="10725" started-at="2022-08-15T03:44:04 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:15 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="914" started-at="2022-08-21T21:15:34 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:35 EDT">
           <params>
             <param index="0">
               <value>
@@ -251,41 +182,18 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52866}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52866/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3e283a146d2f3cc01e7a876f2c523ef5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_homepage.html". Current url: "http://ec2-54-164-157-51.compute-1.amazonaws.com/t_login.html" (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'MSI', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\jacel\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52866}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52866/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3e283a146d2f3cc01e7a876f2c523ef5
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at com.revature.steps.LoginTeacher.i_should_be_redirected_to_the_teacher_homepage(LoginTeacher.java:50)
-at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/IntelliJProjects/project-2-end-2-end-tests/src/test/resources/login_teacher.feature:15)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="599" started-at="2022-08-15T03:44:15 EDT" finished-at="2022-08-15T03:44:16 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="583" started-at="2022-08-21T21:15:35 EDT" finished-at="2022-08-21T21:15:36 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1054" started-at="2022-08-15T03:44:16 EDT" finished-at="2022-08-15T03:44:17 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1072" started-at="2022-08-21T21:15:36 EDT" finished-at="2022-08-21T21:15:37 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="501" started-at="2022-08-15T03:44:17 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:17 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="373" started-at="2022-08-21T21:15:37 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:37 EDT">
           <params>
             <param index="0">
               <value>
@@ -301,15 +209,15 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="576" started-at="2022-08-15T03:44:17 EDT" finished-at="2022-08-15T03:44:18 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="597" started-at="2022-08-21T21:15:37 EDT" finished-at="2022-08-21T21:15:38 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1075" started-at="2022-08-15T03:44:18 EDT" finished-at="2022-08-15T03:44:19 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1063" started-at="2022-08-21T21:15:38 EDT" finished-at="2022-08-21T21:15:39 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="528" started-at="2022-08-15T03:44:19 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:19 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="379" started-at="2022-08-21T21:15:39 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:39 EDT">
           <params>
             <param index="0">
               <value>
@@ -325,15 +233,15 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="581" started-at="2022-08-15T03:44:19 EDT" finished-at="2022-08-15T03:44:20 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="592" started-at="2022-08-21T21:15:39 EDT" finished-at="2022-08-21T21:15:40 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1026" started-at="2022-08-15T03:44:20 EDT" finished-at="2022-08-15T03:44:21 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1084" started-at="2022-08-21T21:15:40 EDT" finished-at="2022-08-21T21:15:41 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="520" started-at="2022-08-15T03:44:21 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:22 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="384" started-at="2022-08-21T21:15:41 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:41 EDT">
           <params>
             <param index="0">
               <value>
@@ -349,15 +257,15 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="577" started-at="2022-08-15T03:44:22 EDT" finished-at="2022-08-15T03:44:22 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="595" started-at="2022-08-21T21:15:41 EDT" finished-at="2022-08-21T21:15:42 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1075" started-at="2022-08-15T03:44:22 EDT" finished-at="2022-08-15T03:44:23 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1073" started-at="2022-08-21T21:15:42 EDT" finished-at="2022-08-21T21:15:43 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="424" started-at="2022-08-15T03:44:23 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:24 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="301" started-at="2022-08-21T21:15:43 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:43 EDT">
           <params>
             <param index="0">
               <value>
@@ -373,15 +281,15 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="601" started-at="2022-08-15T03:44:24 EDT" finished-at="2022-08-15T03:44:24 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="577" started-at="2022-08-21T21:15:43 EDT" finished-at="2022-08-21T21:15:44 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1074" started-at="2022-08-15T03:44:24 EDT" finished-at="2022-08-15T03:44:25 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1072" started-at="2022-08-21T21:15:44 EDT" finished-at="2022-08-21T21:15:45 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="433" started-at="2022-08-15T03:44:25 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:26 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="295" started-at="2022-08-21T21:15:45 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:45 EDT">
           <params>
             <param index="0">
               <value>
@@ -397,15 +305,15 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="573" started-at="2022-08-15T03:44:26 EDT" finished-at="2022-08-15T03:44:26 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="581" started-at="2022-08-21T21:15:45 EDT" finished-at="2022-08-21T21:15:46 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1059" started-at="2022-08-15T03:44:26 EDT" finished-at="2022-08-15T03:44:27 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1064" started-at="2022-08-21T21:15:46 EDT" finished-at="2022-08-21T21:15:47 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="497" started-at="2022-08-15T03:44:27 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:28 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="356" started-at="2022-08-21T21:15:47 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:47 EDT">
           <params>
             <param index="0">
               <value>
@@ -421,15 +329,15 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="575" started-at="2022-08-15T03:44:28 EDT" finished-at="2022-08-15T03:44:29 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="581" started-at="2022-08-21T21:15:47 EDT" finished-at="2022-08-21T21:15:48 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1005" started-at="2022-08-15T03:44:29 EDT" finished-at="2022-08-15T03:44:30 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1056" started-at="2022-08-21T21:15:48 EDT" finished-at="2022-08-21T21:15:49 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="444" started-at="2022-08-15T03:44:30 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:30 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="290" started-at="2022-08-21T21:15:49 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:49 EDT">
           <params>
             <param index="0">
               <value>
@@ -445,15 +353,15 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="565" started-at="2022-08-15T03:44:30 EDT" finished-at="2022-08-15T03:44:31 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="571" started-at="2022-08-21T21:15:49 EDT" finished-at="2022-08-21T21:15:50 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="998" started-at="2022-08-15T03:44:31 EDT" finished-at="2022-08-15T03:44:32 EDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="setup" is-config="true" duration-ms="1057" started-at="2022-08-21T21:15:50 EDT" finished-at="2022-08-21T21:15:51 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="423" started-at="2022-08-15T03:44:32 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-15T03:44:32 EDT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="runScenario" duration-ms="315" started-at="2022-08-21T21:15:51 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-21T21:15:51 EDT">
           <params>
             <param index="0">
               <value>
@@ -469,11 +377,11 @@ at ✽.I should be redirected to the teacher homepage(file:///C:/Users/jacel/Int
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="603" started-at="2022-08-15T03:44:32 EDT" finished-at="2022-08-15T03:44:33 EDT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="quit" is-config="true" duration-ms="579" started-at="2022-08-21T21:15:51 EDT" finished-at="2022-08-21T21:15:52 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="tearDownClass" is-config="true" duration-ms="4" started-at="2022-08-15T03:44:33 EDT" finished-at="2022-08-15T03:44:33 EDT">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.revature.runner.TestRunner@17d0685f]" name="tearDownClass" is-config="true" duration-ms="4" started-at="2022-08-21T21:15:52 EDT" finished-at="2022-08-21T21:15:52 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

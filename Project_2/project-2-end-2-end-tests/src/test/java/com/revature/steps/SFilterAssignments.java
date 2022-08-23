@@ -24,7 +24,7 @@ public class SFilterAssignments {
 
     @Given("I am at the student homepage #3")
     public void i_am_at_the_student_homepage() {
-        TestRunner.driver.get("http://ec2-54-164-157-51.compute-1.amazonaws.com/s_homepage.html");
+        TestRunner.driver.get("http://127.0.0.1:5500/s_homepage.html");
         studentHomepage = new StudentHomepage(TestRunner.driver);
     }
 
@@ -43,8 +43,8 @@ public class SFilterAssignments {
     @Then("I can see only assignments for the Science course")
     public void i_can_see_only_assignments_for_the_science_course() {
         WebDriverWait wdw = new WebDriverWait(TestRunner.driver, Duration.ofSeconds(10));
-        wdw.until(ExpectedConditions.urlToBe("http://ec2-54-164-157-51.compute-1.amazonaws.com/s_view_assignments.html"));
-        Assert.assertEquals(TestRunner.driver.getCurrentUrl(), "http://ec2-54-164-157-51.compute-1.amazonaws.com/s_view_assignments.html");
+        wdw.until(ExpectedConditions.urlToBe("http://127.0.0.1:5500/s_view_assignments.html"));
+        Assert.assertEquals(TestRunner.driver.getCurrentUrl(), "http://127.0.0.1:5500/s_view_assignments.html");
     }
 
 }
